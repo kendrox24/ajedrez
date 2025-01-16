@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendry Salazar - Istruttore di Scacchi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #FFD700;
+            --secondary-color: #1A1A1A;
+            --text-color: #FFFFFF;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            z-index: 1000;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2016&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .tagline {
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+        .services, .about-me {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .service, .about-me-content {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover, .about-me-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        .service h2, .about-me h2 {
+            color: var(--primary-color);
+        }
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .contact {
+            text-align: center;
+            background-color: var(--secondary-color);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .contact h2 {
+            color: var(--primary-color);
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #FFF44F;
+            transform: scale(1.05);
+        }
+        .about-me-content {
+            text-align: left;
+        }
+        .about-me-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--primary-color);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #808080;
+        }
+        .chess-piece {
+            position: fixed;
+            font-size: 40px;
+            color: var(--primary-color);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.5em;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="logo">KS</a>
+    <div class="container">
+        <header>
+            <h1>Kendry Salazar</h1>
+            <p class="tagline">Istruttore di Scacchi a Roma e Online</p>
+        </header>
+
+        <section class="services">
+            <div class="service">
+                <div class="service-icon">♔</div>
+                <h2>Lezioni per Adulti</h2>
+                <p>Strategie avanzate e tattiche per giocatori di tutti i livelli, preparazione di aperture e tornei.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♙</div>
+                <h2>Lezioni per Bambini</h2>
+                <p>Approccio divertente e educativo per giovani menti brillanti dai 5 anni in su.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♖</div>
+                <h2>Lezioni a Roma</h2>
+                <p>Incontri personali per un'esperienza di apprendimento immersiva.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♘</div>
+                <h2>Lezioni Online</h2>
+                <p>Flessibilità e comodità, ovunque tu sia nel mondo.</p>
+            </div>
+        </section>
+
+        <img src="img/w.jpg" height="768" width="1152" alt="Kendry Salazar" 
+
+        <section class="about-me">
+            <div class="about-me-content">
+                
+                <h2>Su di Me</h2>
+
+                <img src="img/1.jpeg" height="600" width="600"alt="Kendry Salazar" class="about-me-image">
+
+                <p>Lezioni di Scacchi con un Maestro Esperto!
+
+                    Se vuoi migliorare le tue abilità negli scacchi o imparare da zero, sono qui per aiutarti! Sono un istruttore certificato FSI con anni di esperienza nell’insegnamento a giocatori di tutte le età e livelli.
+                    
+                    Cosa offro:
+                    
+                    Lezioni personalizzate: Adatto il mio insegnamento alle tue esigenze e livello di competenza.
+                    Strategie e tattiche: Imparerai a pianificare le mosse, a riconoscere schemi e a sviluppare strategie vincenti.
+                    Aperture e finali: Esploreremo le aperture più comuni e affineremo le tue abilità nei finali di partita.
+                    Analisi delle partite: Studieremo partite famose e analizzeremo le tue partite per migliorare.
+                    ️ Orari flessibili:
+                    
+                    Lezioni disponibili sia online che in presenza.
+                    Prima lezione gratuita per conoscerci e valutare le tue esigenze.
+                    Contattami ora per prenotare la tua prima lezione!.</p>
+               
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Inizia il Tuo Viaggio negli Scacchi</h2>
+            <p>Pronto a migliorare il tuo gioco? Contattami per una consulenza gratuita!</p>
+            <div class="contact-buttons">
+                <a href="mailto:kendry.salazar@gmail.com" class="contact-button">Email</a>
+                <a href="https://api.whatsapp.com/send?phone=+393887514420&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button">WhatsApp</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati.</p>
+        </footer>
+    </div>
+
+    <script>
+        const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
+        const numPieces = 10;
+
+        function createChessPiece() {
+            const piece = document.createElement('div');
+            piece.className = 'chess-piece';
+            piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
+            piece.style.left = `${Math.random() * 100}vw`;
+            piece.style.top = `${Math.random() * 100}vh`;
+            document.body.appendChild(piece);
+            return piece;
+        }
+
+        for (let i = 0; i < numPieces; i++) {
+            const piece = createChessPiece();
+            animatePiece(piece);
+        }
+
+        function animatePiece(piece) {
+            anime({
+                targets: piece,
+                translateX: () => anime.random(-500, 500),
+                translateY: () => anime.random(-500, 500),
+                rotate: () => anime.random(-360, 360),
+                duration: () => anime.random(3000, 5000),
+                easing: 'easeInOutQuad',
+                complete: () => animatePiece(piece)
+            });
+        }
+    </script>
+</body>
+</html>
