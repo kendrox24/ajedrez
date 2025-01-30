@@ -1,4 +1,142 @@
 <!DOCTYPE html>
+
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendry Salazar - Istruttore di Scacchi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        /* ... (your existing CSS styles) ... */
+        .language-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px; /* Spacing between buttons */
+        }
+
+        .language-button {
+            padding: 5px 10px;
+            border: none;
+            background-color: var(--primary-color);
+            color: #000000;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-button:hover {
+            background-color: #FFF44F;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="logo">KS</a>
+
+    <div class="language-buttons">
+        <button class="language-button" data-lang="en">EN</button>
+        <button class="language-button" data-lang="es">ES</button>
+        <button class="language-button" data-lang="it">IT</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 data-translate="title">Kendry Salazar</h1>
+            <p class="tagline" data-translate="tagline">Istruttore di Scacchi a Roma e Online</p>
+        </header>
+
+        <div class="contact-buttons">
+            <p data-translate="contact_message">Mandami un messaggio per saperne di più</p>
+            <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button" data-translate="contact_button">Clicca qui</a>
+        </div>
+
+        <section class="services">
+            <div class="service">
+                <div class="service-icon">♔</div>
+                <h2 data-translate="adult_lessons">Lezioni per Adulti</h2>
+                <p data-translate="adult_lessons_desc">Strategie avanzate e tattiche per giocatori di tutti i livelli, preparazione di aperture e tornei.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♙</div>
+                <h2 data-translate="kids_lessons">Lezioni per Bambini</h2>
+                <p data-translate="kids_lessons_desc">Approccio divertente e educativo per giovani menti brillanti dai 5 anni in su.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♖</div>
+                <h2 data-translate="rome_lessons">Lezioni a Roma</h2>
+                <p data-translate="rome_lessons_desc">Incontri personali per un'esperienza di apprendimento immersiva.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♘</div>
+                <h2 data-translate="online_lessons">Lezioni Online</h2>
+                <p data-translate="online_lessons_desc">Flessibilità e comodità, ovunque tu sia nel mondo.</p>
+            </div>
+        </section>
+
+        <img src="w.jpg" height="100%" width="100%" alt="Kendry Salazar">
+        <p>Foto:@jcardenas_photo</p>
+
+        <section class="about-me">
+            <div class="about-me-content">
+                <h2 data-translate="about_me">Su di Me</h2>
+                <img src="1.jpeg" height="300" width="300" alt="Foto di Kendry Salazar, istruttore di scacchi" class="about-me-image">
+                <p data-translate="about_me_description">Lezioni di Scacchi Online e In Presenza con un Istruttore Certificato FSI!
+                    <h1 class="titolo" data-translate="chess_lessons_title">Lezioni di Scacchi</h1>
+                    <h2 class="sottotitolo" data-translate="chess_lessons_subtitle">Online e in Presenza</h2>
+
+                    <p data-translate="chess_intro">Sei appassionato di scacchi e vuoi migliorare il tuo gioco? Oppure desideri imparare da zero con un insegnante esperto? Sono qui per aiutarti!</p>
+
+                    <p data-translate="chess_name">Mi chiamo Kendry Salazar e sono un istruttore certificato FSI con anni di esperienza nell'insegnamento a giocatori di tutte le età e livelli. Offro lezioni di scacchi personalizzate, sia online che in presenza, per aiutarti a raggiungere i tuoi obiettivi.</p>
+
+                    <h2 data-translate="what_you_learn">Cosa imparerai</h2>
+                    <ul data-translate="what_you_learn_list">
+                        <li>Strategie e tattiche vincenti: Scopri come pianificare le mosse, riconoscere schemi e sviluppare strategie efficaci per ogni partita.</li>
+                        <li>Aperture e finali: Studieremo insieme le aperture più comuni e ti insegnerò come gestire al meglio i finali di partita.</li>
+                        <li>Analisi delle partite: Analizzeremo le tue partite e quelle dei grandi maestri per identificare punti di forza e aree di miglioramento.</li>
+                        <li>Lezioni su misura: Ogni lezione è adattata al tuo livello (principiante, intermedio o avanzato) e alle tue esigenze specifiche.</li>
+                    </ul>
+
+                    <h2 data-translate="why_choose_me">Perché scegliere me</h2>
+                    <ul data-translate="why_choose_me_list">
+                        <li>Certificazione FSI: Garanzia di professionalità e competenza.</li>
+                        <li>Orari flessibili: Puoi scegliere tra lezioni online o in presenza, negli orari che preferisci.</li>
+                        <li>Prima lezione gratuita: Conosciamoci e valuta senza impegno se il mio metodo è quello giusto per te!</li>
+                    </ul>
+
+                    <p class="chiamata-all-azione" data-translate="book_lesson"><strong>Prenota ora la tua prima lezione di scacchi!</strong></p>
+
+                    <p data-translate="contact_for_info">Non aspettare! Migliora le tue abilità negli scacchi con un maestro esperto. Contattami subito per prenotare la tua prima lezione gratuita o per ricevere maggiori informazioni.</p>
+                </p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2 data-translate="start_journey">Inizia il Tuo Viaggio negli Scacchi</h2>
+            <p data-translate="contact_intro">Pronto a migliorare il tuo gioco? Contattami per una consulenza gratuita!
+                <p data-translate="contact_details">Scacchilezioni@gmail.com     +39.350.826.08.06</p>
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:scacchilezioni@gmail.com" class="contact-button" data-translate="email">Email</a>
+                <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button" data-translate="whatsapp">WhatsApp</a>
+            </div>
+        </section>
+
+        <footer>
+            <p data-translate="footer_text">© 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati.</p>
+            <div class="social-buttons">
+                </div>
+        </footer>
+    </div>
+
+    <script>
+        // ... (your existing chess piece animation script) ...
+
+        const translations = {
+            en: {
 <html lang="it">
 <head>
     <meta charset="UTF-8">
