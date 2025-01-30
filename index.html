@@ -482,61 +482,6 @@
         }
     </style>
 </head>
-<body>
-    <a href="#" class="logo">KS</a>
-    <div class="container">
-        <header>
-            <h1>Kendry Salazar</h1>
-            <p class="tagline">Istruttore di Scacchi a Roma e Online</p>
-        </header>
-
-
-
-        <div class="contact-buttons">
-            <p>Mandami un messaggio per saperne di più</p>
-            <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button">Clicca qui</a>
-        </div>
-
-        <br>
-
-
-
-        
-    </div>
-
-    <script>
-        const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
-        const numPieces = 10;
-
-        function createChessPiece() {
-            const piece = document.createElement('div');
-            piece.className = 'chess-piece';
-            piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
-            piece.style.left = `${Math.random() * 100}vw`;
-            piece.style.top = `${Math.random() * 100}vh`;
-            document.body.appendChild(piece);
-            return piece;
-        }
-
-        for (let i = 0; i < numPieces; i++) {
-            const piece = createChessPiece();
-            animatePiece(piece);
-        }
-
-        function animatePiece(piece) {
-            anime({
-                targets: piece,
-                translateX: () => anime.random(-500, 500),
-                translateY: () => anime.random(-500, 500),
-                rotate: () => anime.random(-360, 360),
-                duration: () => anime.random(3000, 5000),
-                easing: 'easeInOutQuad',
-                complete: () => animatePiece(piece)
-            });
-        }
-    </script>
-</body>
-
 
 (<head></head>):
 
