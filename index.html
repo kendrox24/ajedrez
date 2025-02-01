@@ -270,54 +270,43 @@
             }
         };
 
-        const translations = {
-    es: {
-        // ... altre traduzioni ...
-        reviewsTitle: "Reseñas de Mis Alumnos",
-    },
-    en: {
-        // ... altre traduzioni ...
-        reviewsTitle: "Reviews from My Students",
-    },
-    it: {
-        // ... altre traduzioni ...
-        reviewsTitle: "Recensioni dei Miei Alunni",
-    }
+      
 };
 
-        function changeLanguage(language) {
-            const translation = translations[language];
-            document.getElementById('title').textContent = translation.title;
-            document.getElementById('tagline').textContent = translation.tagline;
-            document.getElementById('contact-message').textContent = translation.contactMessage;
-            document.getElementById('contact-button').textContent = translation.contactButton;
-            document.getElementById('adults-lessons').textContent = translation.adultsLessons;
-            document.getElementById('adults-description').textContent = translation.adultsDescription;
-            document.getElementById('kids-lessons').textContent = translation.kidsLessons;
-            document.getElementById('kids-description').textContent = translation.kidsDescription;
-            document.getElementById('rome-lessons').textContent = translation.romeLessons;
-            document.getElementById('rome-description').textContent = translation.romeDescription;
-            document.getElementById('online-lessons').textContent = translation.onlineLessons;
-            document.getElementById('online-description').textContent = translation.onlineDescription;
-            document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
-            document.getElementById('about-me-description').textContent = translation.aboutMeDescription;
-            document.getElementById('chess-lessons-title').textContent = translation.chessLessonsTitle;
-            document.getElementById('lessons-subtitle').textContent = translation.lessonsSubtitle;
-            document.getElementById('lessons-description').textContent = translation.lessonsDescription;
-            document.getElementById('about-me-text').textContent = translation.aboutMeText;
-            document.getElementById('what-you-learn-title').textContent = translation.whatYouLearnTitle;
-            document.getElementById('what-you-learn-list').innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('why-choose-me-title').textContent = translation.whyChooseMeTitle;
-            document.getElementById('why-choose-me-list').innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('call-to-action').textContent = translation.callToAction;
-            document.getElementById('final-message').textContent = translation.finalMessage;
-            document.getElementById('contact-title').textContent = translation.contactTitle;
-            document.getElementById('contact-text').textContent = translation.contactText;
-            document.getElementById('contact-info').textContent = translation.contactInfo;
-            document.getElementById('email-button').textContent = translation.emailButton;
-            document.getElementById('whatsapp-button').textContent = translation.whatsappButton;
-            document.getElementById('footer-text').textContent = translation.footerText;
-        }
+function changeLanguage(language) {
+    const translation = translations[language];
+    document.getElementById('title').textContent = translation.title;
+    document.getElementById('tagline').textContent = translation.tagline;
+    document.getElementById('contact-message').textContent = translation.contactMessage;
+    document.getElementById('contact-button').textContent = translation.contactButton;
+    document.getElementById('adults-lessons').textContent = translation.adultsLessons;
+    document.getElementById('adults-description').textContent = translation.adultsDescription;
+    document.getElementById('kids-lessons').textContent = translation.kidsLessons;
+    document.getElementById('kids-description').textContent = translation.kidsDescription;
+    document.getElementById('rome-lessons').textContent = translation.romeLessons;
+    document.getElementById('rome-description').textContent = translation.romeDescription;
+    document.getElementById('online-lessons').textContent = translation.onlineLessons;
+    document.getElementById('online-description').textContent = translation.onlineDescription;
+    document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
+    document.getElementById('about-me-description').textContent = translation.aboutMeDescription;
+    document.getElementById('chess-lessons-title').textContent = translation.chessLessonsTitle;
+    document.getElementById('lessons-subtitle').textContent = translation.lessonsSubtitle;
+    document.getElementById('lessons-description').textContent = translation.lessonsDescription;
+    document.getElementById('about-me-text').textContent = translation.aboutMeText;
+    document.getElementById('what-you-learn-title').textContent = translation.whatYouLearnTitle;
+    document.getElementById('what-you-learn-list').innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('why-choose-me-title').textContent = translation.whyChooseMeTitle;
+    document.getElementById('why-choose-me-list').innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('call-to-action').textContent = translation.callToAction;
+    document.getElementById('final-message').textContent = translation.finalMessage;
+    document.getElementById('contact-title').textContent = translation.contactTitle;
+    document.getElementById('contact-text').textContent = translation.contactText;
+    document.getElementById('contact-info').textContent = translation.contactInfo;
+    document.getElementById('email-button').textContent = translation.emailButton;
+    document.getElementById('whatsapp-button').textContent = translation.whatsappButton;
+    document.getElementById('footer-text').textContent = translation.footerText;
+    document.getElementById('reviews-title').textContent = translation.reviewsTitle; // Nueva línea
+}
 
         const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
         const numPieces = 10;
