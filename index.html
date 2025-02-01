@@ -31,9 +31,9 @@
 </head>
 <body>
     <div class="language-buttons">
-        <button class="language-button" onclick="changeLanguage('es')">Español</button>
-        <button class="language-button" onclick="changeLanguage('en')">English</button>
-        <button class="language-button" onclick="changeLanguage('it')">Italiano</button>
+        <button class="language-button" onclick="changeLanguage('es')">ES</button>
+        <button class="language-button" onclick="changeLanguage('en')">EN</button>
+        <button class="language-button" onclick="changeLanguage('it')">IT</button>
     </div>
     <a href="#" class="logo">KS</a>
     <div class="container">
@@ -105,6 +105,29 @@
                 <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button" id="whatsapp-button">WhatsApp</a>
             </div>
         </section>
+
+        <section class="reviews">
+            <h2 id="reviews-title">Recensioni dei Miei Alunni</h2>
+            <div class="reviews-container">
+                <div class="review">
+                    <p class="review-text">"Kendry è un insegnante fantastico! Ha reso gli scacchi divertenti e facili da capire. Consigliatissimo!"</p>
+                    <p class="review-author">- Marco, Roma</p>
+                </div>
+                <div class="review">
+                    <p class="review-text">"Le lezioni online sono state molto utili. Kendry è paziente e chiaro nelle spiegazioni."</p>
+                    <p class="review-author">- Sara, Milano</p>
+                </div>
+                <div class="review">
+                    <p class="review-text">"Mio figlio di 8 anni ha imparato tantissimo e si diverte un mondo. Grazie Kendry!"</p>
+                    <p class="review-author">- Laura, Bologna</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
         <footer>
             <p id="footer-text">&copy; 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati.</p>
             <div class="social-buttons">
@@ -246,6 +269,21 @@
                 footerText: "&copy; 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati."
             }
         };
+
+        const translations = {
+    es: {
+        // ... altre traduzioni ...
+        reviewsTitle: "Reseñas de Mis Alumnos",
+    },
+    en: {
+        // ... altre traduzioni ...
+        reviewsTitle: "Reviews from My Students",
+    },
+    it: {
+        // ... altre traduzioni ...
+        reviewsTitle: "Recensioni dei Miei Alunni",
+    }
+};
 
         function changeLanguage(language) {
             const translation = translations[language];
@@ -505,6 +543,50 @@
                 left: 10px;
             }
         }
+
+        .reviews {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.reviews h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.review {
+    background-color: #2A2A2A;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.review-text {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.review-author {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: right;
+}
     </style>
 </head>
 
