@@ -348,32 +348,7 @@
                 complete: () => animatePiece(piece)
             });
         }
-        function animatePiece(piece) {
-            anime({
-                targets: piece,
-                translateX: () => anime.random(-500, 500),
-                translateY: () => anime.random(-500, 500),
-                rotate: () => anime.random(-360, 360),
-                duration: () => anime.random(3000, 5000),
-                easing: 'easeInOutQuad',
-                complete: () => animatePiece(piece)
-            });
-        }
-
-                function detectLanguage() {
-            const userLanguage = navigator.language.split('-')[0];
-            const supportedLanguages = ['es', 'en', 'it'];
-            const defaultLanguage = 'it';
-
-            if (supportedLanguages.includes(userLanguage)) {
-                changeLanguage(userLanguage);
-            } else {
-                changeLanguage(defaultLanguage);
-            }
-        }
-
-        window.onload = detectLanguage;
-        </script>
+    </script>
 </body>
 </html>
 <html lang="it">
