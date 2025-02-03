@@ -275,7 +275,7 @@
         function changeLanguage(language) {
             const translation = translations[language];
             document.getElementById('title').textContent = translation.title;
-            document.getElementById('tagline').textContent = translation.tagline;
+            document.getElementById('what-you-learn-list').innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
             document.getElementById('contact-message').textContent = translation.contactMessage;
             document.getElementById('contact-button').textContent = translation.contactButton;
             document.getElementById('adults-lessons').textContent = translation.adultsLessons;
@@ -341,7 +341,7 @@
     </script>
 </body>
 </html>
-<html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -556,8 +556,7 @@
 </head>
 
 
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-995212560">< window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-995212560'); </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-995212560">
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-995212560">
 </script>
 <script>
   window.dataLayer = window.dataLayer || [];
