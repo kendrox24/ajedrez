@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kendry Salazar - Istruttore di Scacchi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables - Palette più calda e naturale */
+        /* CSS Variables - Palette più elegante e professionale */
         :root {
-            --primary-color: #8B4513; /* Marrone caldo */
-            --secondary-color: #2F4F4F; /* Verde scuro */
-            --accent-color: #CD853F; /* Oro antico */
-            --text-color: #2F4F4F;
-            --light-text: #696969;
-            --background-color: #F5F5DC; /* Beige */
-            --card-background: #FEFEFE;
-            --hover-color: #A0522D;
-            --success-color: #228B22;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --primary-color: #5D4037; /* Marrone scuro, quasi caffè */
+            --secondary-color: #263238; /* Grigio-blu scuro, molto professionale */
+            --accent-color: #B38867; /* Beige dorato, raffinato */
+            --text-color: #3C474D; /* Grigio scuro per il corpo del testo */
+            --light-text: #607D8B; /* Grigio-blu più chiaro per i testi secondari */
+            --background-color: #ECEFF1; /* Grigio molto chiaro, quasi bianco */
+            --card-background: #FFFFFF; /* Bianco puro per i card */
+            --hover-color: #795548; /* Tonalità più chiara del marrone primario per gli hover */
+            --success-color: #4CAF50; /* Verde più classico per le CTA primarie */
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08); /* Ombra più leggera */
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.12); /* Ombra media */
         }
 
         * {
@@ -27,11 +28,19 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Inter per il corpo del testo */
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.6; /* Leggermente più compatto per eleganza */
             overflow-x: hidden;
+            font-size: 16px; /* Dimensione base per migliore leggibilità */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif; /* Playfair Display per i titoli */
+            color: var(--secondary-color);
+            line-height: 1.2;
+            margin-bottom: 0.8em;
         }
 
         /* Navigation */
@@ -39,90 +48,93 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(254, 254, 254, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.98); /* Bianco quasi opaco */
+            backdrop-filter: blur(8px);
+            padding: 12px 0; /* Un po' meno padding */
             z-index: 1000;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-light); /* Ombra più delicata */
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px; /* Spazio leggermente aumentato */
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 2em;
-            font-weight: bold;
+            font-size: 2.2em; /* Logo leggermente più grande */
+            font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
         }
 
         .language-buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px; /* Gap ridotto */
         }
 
         .language-button {
-            background-color: var(--primary-color);
+            background-color: var(--accent-color); /* Colore accent per i bottoni lingua */
             color: var(--card-background);
             border: none;
-            padding: 8px 15px;
-            border-radius: 25px;
+            padding: 7px 14px; /* Padding leggermente ridotto */
+            border-radius: 20px; /* Bordi più smussati */
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500; /* Peso del font più leggero */
             transition: all 0.3s ease;
-            font-size: 0.9em;
+            font-size: 0.85em; /* Dimensione leggermente più piccola */
+            letter-spacing: 0.03em; /* Spaziatura tra le lettere */
         }
 
         .language-button:hover,
         .language-button.active {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
+            background-color: var(--primary-color); /* Marrone primario al hover */
+            transform: translateY(-1px); /* Effetto più sottile */
         }
 
         /* Main Container */
         .container {
-            max-width: 1200px;
+            max-width: 1100px; /* Contenitore leggermente più stretto per eleganza */
             margin: 0 auto;
-            padding: 100px 20px 20px;
+            padding: 120px 25px 40px; /* Padding superiore aumentato per la navbar */
         }
 
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--card-background) 0%, #F0F8FF 100%);
-            border-radius: 20px;
-            margin-bottom: 60px;
-            box-shadow: var(--shadow);
+            padding: 70px 0; /* Padding aumentato */
+            background: linear-gradient(135deg, var(--card-background) 0%, #F5F7FA 100%); /* Sfondo più tenue */
+            border-radius: 25px; /* Bordi più arrotondati */
+            margin-bottom: 70px;
+            box-shadow: var(--shadow-medium); /* Ombra più pronunciata qui */
         }
 
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 4em; /* Titolo più grande */
             margin-bottom: 20px;
             color: var(--secondary-color);
             font-weight: 700;
+            letter-spacing: -0.02em; /* Spaziatura tra le lettere negativa per titoli */
         }
 
         .hero .tagline {
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: var(--light-text);
-            margin-bottom: 40px;
+            margin-bottom: 50px; /* Spazio aumentato */
+            font-weight: 300; /* Font più leggero per la tagline */
         }
 
         .hero-image {
-            max-width: 400px;
+            max-width: 450px; /* Immagine leggermente più grande */
             width: 100%;
-            height: 250px;
+            height: 280px; /* Altezza leggermente maggiore */
             object-fit: cover;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: var(--shadow);
+            border-radius: 20px; /* Bordi più arrotondati */
+            margin: 40px 0; /* Spazio aumentato */
+            box-shadow: var(--shadow-medium);
         }
 
         /* Image Styles */
@@ -135,292 +147,350 @@
 
         .full-width-image {
             width: 100%;
-            max-width: 600px;
-            height: 300px;
+            max-width: 700px; /* Immagine più grande */
+            height: 350px; /* Altezza maggiore */
             object-fit: cover;
-            margin: 40px auto;
+            margin: 50px auto; /* Spazio aumentato */
             display: block;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-medium);
         }
 
         /* CTA Buttons */
         .cta-section {
             text-align: center;
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .cta-primary {
             display: inline-block;
-            background: linear-gradient(135deg, var(--success-color), #32CD32);
+            background: linear-gradient(135deg, var(--success-color), #66BB6A); /* Gradiente più morbido */
             color: white;
-            padding: 18px 40px;
+            padding: 16px 38px; /* Padding leggermente ridotto per essere più proporzionato */
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1em;
-            margin: 10px 20px;
+            font-weight: 600;
+            font-size: 1.05em;
+            margin: 10px 15px; /* Margine leggermente ridotto */
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-medium);
+            letter-spacing: 0.05em;
         }
 
         .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(34, 139, 34, 0.3);
+            transform: translateY(-2px); /* Effetto più sottile */
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.25); /* Ombra più diffusa */
         }
 
         .cta-secondary {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 15px 35px;
+            padding: 14px 32px; /* Padding leggermente ridotto */
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            margin: 10px 20px;
+            font-weight: 500;
+            margin: 10px 15px;
             transition: all 0.3s ease;
+            font-size: 1em;
+            letter-spacing: 0.03em;
         }
 
         .cta-secondary:hover {
-            background-color: var(--hover-color);
-            transform: translateY(-2px);
+            background-color: var(--primary-color); /* Marrone primario al hover */
+            transform: translateY(-1px);
+        }
+
+        /* Sections Titles */
+        section h2 {
+            text-align: center;
+            font-size: 3em; /* Titoli di sezione più grandi */
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--secondary-color);
         }
 
         /* Services Grid */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            gap: 35px; /* Gap aumentato */
+            margin: 70px 0;
         }
 
         .service {
             background: var(--card-background);
-            padding: 40px 30px;
-            border-radius: 20px;
+            padding: 45px 35px; /* Padding aumentato */
+            border-radius: 25px; /* Bordi più arrotondati */
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
+            box-shadow: var(--shadow-light); /* Ombra più leggera */
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Bordo sottile */
         }
 
         .service:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px); /* Effetto più sottile */
+            border-color: var(--accent-color); /* Bordo con colore accent */
+            box-shadow: var(--shadow-medium);
         }
 
         .service-icon {
-            font-size: 4em;
+            font-size: 4.5em; /* Icone più grandi */
             margin-bottom: 25px;
             display: block;
             color: var(--primary-color);
+            line-height: 1; /* Rimuove spazio extra */
         }
 
         .service h2 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.4em;
+            font-family: 'Playfair Display', serif; /* Playfair Display per titoli dei servizi */
+            color: var(--primary-color); /* Usa primary color per questi titoli */
+            margin-bottom: 12px;
+            font-size: 1.6em; /* Titoli dei servizi più grandi */
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .service p {
             color: var(--light-text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.95em;
         }
 
-        /* Pricing Section */
+        /* Pricing Section (Ora "I Miei Corsi") */
         .pricing {
             background: var(--card-background);
-            padding: 60px 40px;
-            border-radius: 20px;
-            margin: 60px 0;
+            padding: 70px 50px; /* Padding aumentato */
+            border-radius: 25px;
+            margin: 70px 0;
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-medium);
         }
 
         .pricing h2 {
-            color: var(--secondary-color);
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 3.2em;
+            margin-bottom: 25px;
         }
 
         .pricing-subtitle {
             color: var(--light-text);
-            font-size: 1.1em;
-            margin-bottom: 40px;
+            font-size: 1.15em;
+            margin-bottom: 50px;
+            font-weight: 300;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Card leggermente più larghi */
             gap: 30px;
             margin-top: 40px;
         }
 
         .pricing-card {
-            background: linear-gradient(135deg, #F8F8FF 0%, #E6E6FA 100%);
-            padding: 30px 25px;
-            border-radius: 15px;
-            border: 2px solid var(--accent-color);
+            background: linear-gradient(135deg, #FDFDFD 0%, #F5F7FA 100%); /* Sfondo più tenue */
+            padding: 35px 30px; /* Padding aumentato */
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Bordo più sottile e discreto */
             transition: all 0.3s ease;
+            text-align: left; /* Allineamento a sinistra per le card */
         }
 
         .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color); /* Bordo con primary color al hover */
         }
 
         .pricing-card h3 {
-            color: var(--secondary-color);
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 2em;
+            font-family: 'Playfair Display', serif;
             color: var(--primary-color);
-            font-weight: 700;
-            margin: 15px 0;
+            font-size: 1.5em; /* Titoli card più grandi */
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
-        .price-note {
-            font-size: 0.9em;
-            color: var(--success-color);
-            font-weight: 600;
-            margin-top: 10px;
+        .pricing-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 0.95em;
         }
 
         /* About Section */
         .about {
-            margin: 60px 0;
+            margin: 70px 0;
         }
 
         .about-content {
             background: var(--card-background);
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+            padding: 60px 50px; /* Padding aumentato */
+            border-radius: 25px;
+            box-shadow: var(--shadow-medium);
         }
 
         .about-content h2 {
-            color: var(--secondary-color);
-            font-size: 2.2em;
-            margin-bottom: 30px;
+            font-size: 2.8em; /* Titolo più specifico */
+            margin-bottom: 35px;
             text-align: center;
         }
 
         .about-image {
-            width: 200px;
-            height: 200px;
+            width: 220px; /* Immagine più grande */
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px; /* Spazio aumentato */
             display: block;
-            border: 4px solid var(--primary-color);
-            box-shadow: var(--shadow);
+            border: 5px solid var(--accent-color); /* Bordo più spesso e color accent */
+            box-shadow: var(--shadow-medium);
         }
 
         .about-content h3 {
-            color: var(--primary-color);
-            font-size: 1.4em;
-            margin: 30px 0 15px 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary-color);
+            font-size: 1.7em; /* Titoli interni più grandi */
+            margin: 40px 0 20px 0; /* Spazio aumentato */
+            font-weight: 600;
         }
 
         .about-content h4 {
-            color: var(--secondary-color);
-            font-size: 1.2em;
-            margin: 25px 0 10px 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin: 30px 0 15px 0;
+            font-weight: 500;
         }
 
         .about-content ul {
-            margin: 20px 0;
-            padding-left: 20px;
+            margin: 25px 0;
+            padding-left: 25px; /* Padding aumentato */
+            list-style: none; /* Rimuove i bullet point */
         }
 
-        .about-content li {
+        .about-content ul li {
             margin-bottom: 12px;
             color: var(--text-color);
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.05em;
+        }
+
+        .about-content ul li::before { /* Bullet point personalizzato */
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
         }
 
         .chiamata-all-azione {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em; /* Dimensione aumentata */
+            font-weight: 700;
+            color: var(--primary-color); /* Usa primary color */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center;
         }
+
+        .about-content p {
+            margin-bottom: 1em;
+            color: var(--text-color);
+            font-size: 1.05em;
+        }
+        
+        #final-message {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-top: 30px;
+            text-align: center;
+        }
+
 
         /* Reviews Section */
         .reviews {
-            margin: 60px 0;
+            margin: 70px 0;
         }
 
         .reviews h2 {
-            text-align: center;
-            color: var(--secondary-color);
-            font-size: 2.2em;
-            margin-bottom: 40px;
+            font-size: 3em;
+            margin-bottom: 50px;
         }
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Card leggermente più larghi */
             gap: 30px;
         }
 
         .review {
             background: var(--card-background);
-            padding: 35px 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+            padding: 40px 35px; /* Padding aumentato */
+            border-radius: 25px;
+            box-shadow: var(--shadow-light);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .review:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
         }
 
         .review-text {
             font-style: italic;
             color: var(--text-color);
-            margin-bottom: 20px;
-            font-size: 1.05em;
-            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1.1em; /* Testo recensione leggermente più grande */
+            line-height: 1.7;
         }
 
         .review-author {
             color: var(--primary-color);
             font-weight: 600;
             text-align: right;
+            font-size: 1em;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #556B2F 100%);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #37474F 100%); /* Gradiente più scuro e sofisticato */
             color: white;
-            padding: 60px 40px;
-            border-radius: 20px;
+            padding: 70px 50px;
+            border-radius: 25px;
             text-align: center;
-            margin: 60px 0;
-            box-shadow: var(--shadow);
+            margin: 70px 0;
+            box-shadow: var(--shadow-medium);
         }
 
         .contact h2 {
             color: var(--accent-color);
-            font-size: 2.5em;
-            margin-bottom: 25px;
+            font-size: 3.2em;
+            margin-bottom: 30px;
+        }
+
+        .contact-text {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            color: #CFD8DC; /* Grigio chiaro per il testo */
+            font-weight: 300;
         }
 
         .contact-info {
-            font-size: 1.1em;
+            font-size: 1.15em;
             margin: 30px 0;
             color: #F0F8FF;
+            font-weight: 500;
         }
 
         .contact-buttons {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px; /* Gap leggermente ridotto */
             margin-top: 40px;
             flex-wrap: wrap;
         }
@@ -428,29 +498,32 @@
         .contact-button {
             background-color: var(--accent-color);
             color: white;
-            padding: 15px 35px;
+            padding: 16px 38px; /* Padding maggiore */
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 700;
+            font-weight: 600;
             transition: all 0.3s ease;
             font-size: 1.05em;
+            letter-spacing: 0.05em;
         }
 
         .contact-button:hover {
-            background-color: white;
+            background-color: #ECEFF1; /* Grigio chiaro al hover */
             color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(236, 239, 241, 0.25);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 25px; /* Padding aumentato */
             color: var(--light-text);
             background: var(--card-background);
-            margin-top: 60px;
-            border-radius: 20px 20px 0 0;
+            margin-top: 70px;
+            border-radius: 25px 25px 0 0;
+            box-shadow: var(--shadow-light);
+            font-size: 0.95em;
         }
 
         .social-buttons {
@@ -464,8 +537,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 52px; /* Pulsanti sociali leggermente più grandi */
+            height: 52px;
             background-color: var(--primary-color);
             color: white;
             border-radius: 50%;
@@ -475,53 +548,37 @@
 
         .social-button:hover {
             background-color: var(--secondary-color);
-            transform: translateY(-3px) scale(1.1);
+            transform: translateY(-2px) scale(1.08); /* Effetto più sottile */
         }
 
         .social-button svg {
-            width: 24px;
-            height: 24px;
+            width: 26px; /* Icone SVG più grandi */
+            height: 26px;
             stroke: currentColor;
         }
 
-        /* Ho rimosso il CSS per .chess-piece perché non era utilizzato */
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero .tagline {
-                font-size: 1.1em;
-            }
-
-            .cta-primary,
-            .cta-secondary {
+            h1 { font-size: 3em !important; }
+            h2 { font-size: 2.5em !important; margin-bottom: 30px !important; }
+            .hero h1 { font-size: 3em !important; }
+            .hero .tagline { font-size: 1.2em !important; }
+            .cta-primary, .cta-secondary {
                 display: block;
                 margin: 10px auto;
                 max-width: 280px;
+                font-size: 1em;
+                padding: 14px 30px;
             }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-button {
-                width: 250px;
-            }
-
-            .services,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content,
-            .contact,
-            .pricing {
-                padding: 30px 20px;
-            }
+            .contact-buttons { flex-direction: column; align-items: center; }
+            .contact-button { width: 250px; }
+            .services, .pricing-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .about-content, .contact, .pricing { padding: 40px 25px; }
+            .hero, .about, .services, .pricing, .reviews, .contact { margin: 50px 0; }
+            .container { padding: 100px 15px 30px; }
+            .about-content h2 { font-size: 2.2em; }
+            .about-content h3 { font-size: 1.5em; margin: 30px 0 15px 0; }
+            .about-image { width: 180px; height: 180px; margin-bottom: 30px; }
         }
     </style>
 </head>
