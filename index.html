@@ -426,8 +426,7 @@ h2, h3, h4 {
         </footer>
     </div>
 
-    <script>
-        // 3. BLOCCO TRADUZIONI SEO AGGIORNATO
+   // 1. OGGETTO TRADUZIONI (SISTEMATO CON I TUOI TESTI)
         const translations = {
             es: {
                 title: "Lecciones de Ajedrez",
@@ -443,10 +442,6 @@ h2, h3, h4 {
                 onlineDescription: "Flexibilidad y comodidad en todo el mundo.",
                 aboutMeTitle: "Sobre Mí",
                 aboutMeDescription: "Lecciones de Ajedrez Online y en Persona con Instructor Certificado FSI!",
-                chessLessonsTitle: "Lecciones de Ajedrez",
-                lessonsSubtitle: "Online y en Persona",
-                lessonsDescription: "¿Quieres mejorar tu juego con un experto? ¡Estoy aquí!",
-                aboutMeText: "Mi nombre es Kendry Salazar e instructor FSI.",
                 whatYouLearnTitle: "Qué aprenderás",
                 whatYouLearnList: ["Estrategias ganadoras", "Aperturas y finales", "Análisis de partidas", "Lecciones a medida"],
                 whyChooseMeTitle: "Por qué elegirme",
@@ -458,8 +453,7 @@ h2, h3, h4 {
                 contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
                 emailButton: "Email",
                 whatsappButton: "WhatsApp",
-                reviewsTitle: "Opiniones",
-                footerText: "© 2023 Kendry Salazar - Ajedrez Roma."
+                footerText: "© 2026 Kendry Salazar - Ajedrez Roma."
             },
             en: {
                 title: "Chess Lessons Roma",
@@ -475,10 +469,6 @@ h2, h3, h4 {
                 onlineDescription: "Quality FSI lessons anywhere.",
                 aboutMeTitle: "About Me",
                 aboutMeDescription: "Online and In-Person Chess Instructor.",
-                chessLessonsTitle: "Chess Coaching",
-                lessonsSubtitle: "Rome & Online",
-                lessonsDescription: "Improve your game with an FSI instructor.",
-                aboutMeText: "My name is Kendry Salazar, FSI instructor.",
                 whatYouLearnTitle: "Learning path",
                 whatYouLearnList: ["Tactics", "Endgames", "Game analysis", "Custom plan"],
                 whyChooseMeTitle: "Why me?",
@@ -490,8 +480,7 @@ h2, h3, h4 {
                 contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
                 emailButton: "Email",
                 whatsappButton: "WhatsApp",
-                reviewsTitle: "Reviews",
-                footerText: "© 2023 Kendry Salazar - Chess Rome."
+                footerText: "© 2026 Kendry Salazar - Chess Roma."
             },
             it: {
                 title: "Istruttore Scacchi Roma",
@@ -507,10 +496,6 @@ h2, h3, h4 {
                 onlineDescription: "Qualità FSI ovunque tu sia, orari flessibili.",
                 aboutMeTitle: "Kendry Salazar",
                 aboutMeDescription: "Istruttore FSI, Arbitro Regionale e Giocatore Agonista al Circolo 4 Torri",
-                chessLessonsTitle: "Lezioni di Scacchi",
-                lessonsSubtitle: "Roma e Online",
-                lessonsDescription: "Cerchi un istruttore di scacchi a Roma? Offro lezioni personalizzate.",
-                aboutMeText: "Mi chiamo Kendry Salazar, sono Istruttore FSI e Arbitro Regionale.",
                 whatYouLearnTitle: "Cosa imparerai",
                 whatYouLearnList: [
                     "Strategie vincenti: Analisi con un Arbitro Regionale.",
@@ -532,68 +517,78 @@ h2, h3, h4 {
                 contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
                 emailButton: "Invia Email",
                 whatsappButton: "WhatsApp",
-                mapsButton: "Vedi su Google Maps",
-                reviewsTitle: "Recensioni",
-                footerText: "© 2023 Kendry Salazar - Istruttore Scacchi Roma."
+                footerText: "© 2026 Kendry Salazar - Istruttore Scacchi Roma."
             }
         };
 
+        // 2. FUNZIONE CAMBIO LINGUA (CORRETTA)
         function changeLanguage(language) {
             const translation = translations[language];
-            document.title = `Kendry Salazar - ${translation.tagline}`;
-            document.getElementById('title').textContent = translation.title;
-            document.getElementById('tagline').textContent = translation.tagline;
-            document.getElementById('contact-button').textContent = translation.contactButton;
-            document.getElementById('adults-lessons').textContent = translation.adultsLessons;
-            document.getElementById('adults-description').textContent = translation.adultsDescription;
-            document.getElementById('kids-lessons').textContent = translation.kidsLessons;
-            document.getElementById('kids-description').textContent = translation.kidsDescription;
-            document.getElementById('rome-lessons').textContent = translation.romeLessons;
-            document.getElementById('rome-description').textContent = translation.romeDescription;
-            document.getElementById('online-lessons').textContent = translation.onlineLessons;
-            document.getElementById('online-description').textContent = translation.onlineDescription;
-            document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
-            // Corretti ID mancanti per About Me Description
-            const amDesc = document.getElementById('about-me-description');
-            if(amDesc) amDesc.textContent = translation.aboutMeDescription;
             
-            document.getElementById('what-you-learn-title').textContent = translation.whatYouLearnTitle;
-            document.getElementById('what-you-learn-list').innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('why-choose-me-title').textContent = translation.whyChooseMeTitle;
-            document.getElementById('why-choose-me-list').innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('call-to-action').textContent = translation.callToAction;
-            document.getElementById('final-message').textContent = translation.finalMessage;
-            document.getElementById('contact-title').textContent = translation.contactTitle;
-            document.getElementById('contact-text').textContent = translation.contactText;
-            document.getElementById('contact-info').textContent = translation.contactInfo;
-            document.getElementById('email-button').textContent = translation.emailButton;
-            document.getElementById('whatsapp-button').textContent = translation.whatsappButton;
-            document.getElementById('maps-button').textContent = translation.mapsButton;
-            document.getElementById('reviews-title').textContent = translation.reviewsTitle;
-            document.getElementById('footer-text').textContent = translation.footerText;
+            // Titolo della scheda del browser
+            document.title = `Kendry Salazar - ${translation.tagline}`;
+
+            // Aggiornamento elementi testuali con controllo sicurezza
+            const elements = {
+                'title': translation.title,
+                'tagline': translation.tagline,
+                'contact-button': translation.contactButton,
+                'adults-lessons': translation.adultsLessons,
+                'adults-description': translation.adultsDescription,
+                'kids-lessons': translation.kidsLessons,
+                'kids-description': translation.kidsDescription,
+                'rome-lessons': translation.romeLessons,
+                'rome-description': translation.romeDescription,
+                'online-lessons': translation.onlineLessons,
+                'online-description': translation.onlineDescription,
+                'about-me-title': translation.aboutMeTitle,
+                'call-to-action': translation.callToAction,
+                'final-message': translation.finalMessage,
+                'contact-title': translation.contactTitle,
+                'contact-text': translation.contactText,
+                'contact-info': translation.contactInfo,
+                'email-button': translation.emailButton,
+                'whatsapp-button': translation.whatsappButton,
+                'footer-text': translation.footerText
+            };
+
+            for (let id in elements) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = elements[id];
+            }
+
+            // Gestione liste (ul)
+            const learnList = document.getElementById('what-you-learn-list');
+            if (learnList) learnList.innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
+
+            const whyList = document.getElementById('why-choose-me-list');
+            if (whyList) whyList.innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
+            
+            const learnTitle = document.getElementById('what-you-learn-title');
+            if (learnTitle) learnTitle.textContent = translation.whatYouLearnTitle;
+            
+            const whyTitle = document.getElementById('why-choose-me-title');
+            if (whyTitle) whyTitle.textContent = translation.whyChooseMeTitle;
         }
 
+        // 3. ANIMAZIONI (ORIGINALI)
         document.addEventListener('DOMContentLoaded', () => {
             changeLanguage('it');
+
+            const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
+            const numPieces = 10;
+
+            for (let i = 0; i < numPieces; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'chess-piece';
+                piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
+                piece.style.left = `${Math.random() * 100}vw`;
+                piece.style.top = `${Math.random() * 100}vh`;
+                document.body.appendChild(piece);
+                
+                animatePiece(piece);
+            }
         });
-
-        const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
-        const numPieces = 10;
-
-        function createChessPiece() {
-            const piece = document.createElement('div');
-            piece.className = 'chess-piece';
-            piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
-            piece.style.left = `${Math.random() * 100}vw`;
-            piece.style.top = `${Math.random() * 100}vh`;
-            document.body.appendChild(piece);
-            return piece;
-        }
-
-        for (let i = 0; i < numPieces; i++) {
-            const piece = createChessPiece();
-            animatePiece(piece);
-        }
 
         function animatePiece(piece) {
             anime({
@@ -606,6 +601,5 @@ h2, h3, h4 {
                 complete: () => animatePiece(piece)
             });
         }
-    </script>
 </body>
 </html>
