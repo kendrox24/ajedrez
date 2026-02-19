@@ -3,158 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title id="meta-title">Kendry Salazar | Istruttore FSI, Arbitro e Maestro di Scacchi Roma</title>
-    <meta name="description" content="Kendry Salazar, istruttore FSI, arbitro regionale e giocatore del Circolo 4 Torri. Lezioni di scacchi a Roma: Appia Nuova, Tuscolana, Parioli, Prati e Marconi.">
-    <meta name="keywords" content="lezioni scacchi roma appia nuova, corsi scacchi bambini marconi, istruttore scacchi prati roma, arbitro scacchi kendry salazar, scacchi tuscolana">
+    <title>Kendry Salazar - Istruttore FSI e Arbitro di Scacchi a Roma</title>
+    <meta name="description" content="Lezioni di scacchi a Roma (Appia, Tuscolana, Prati, Parioli). Kendry Salazar, istruttore FSI, Arbitro Regionale e giocatore del Circolo 4 Torri.">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
     <style>
+        h2, h3, h4 {
+            color: yellow; 
+        }
         :root {
-            --primary-color: #FFD700;
-            --secondary-color: #1a253d; /* Blu ancora più profondo per autorità */
-            --text-color: #f0f0f0;
-            --accent-gold: #c5a000;
-            --background-color: #87CEEB;
+            --primary-color: #FFD700; /* Gold */
+            --secondary-color: #2E3A59; /* Dark Blue */
+            --text-color: #98FB98; /* Pale Green */
+            --background-color: #87CEEB; /* Sky Blue */
+            --hover-darken: hsl(246, 89%, 33%); 
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-color); color: var(--text-color); margin: 0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
-        
-        header { 
-            text-align: center; 
-            padding: 80px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('vostra-foto-sfocata.jpg'); 
-            background-size: cover;
-            border-radius: 15px; 
-            margin-bottom: 40px; 
-            border-bottom: 4px solid var(--primary-color);
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
-        h1 { font-size: 3.2em; margin-bottom: 5px; color: var(--primary-color); text-transform: uppercase; }
-        .tagline { font-size: 1.3em; font-weight: 300; letter-spacing: 1px; }
-
-        .authority-badge {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-        }
-
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .service { background-color: var(--secondary-color); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,215,0,0.1); }
-        
-        .zone-list {
-            background: rgba(26, 37, 61, 0.9);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .language-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
             border-radius: 10px;
-            margin: 20px 0;
-            border-left: 5px solid var(--primary-color);
-            text-align: left;
+            margin-bottom: 40px;
         }
 
-        .contact-button { 
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+
+        .services, .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .service, .review, .about-me-content {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover, .review:hover, .about-me-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact, .reviews {
+            text-align: center;
+            background-color: var(--secondary-color);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .contact-button {
             display: inline-block;
-            padding: 18px 35px; 
-            background-color: var(--primary-color); 
-            color: var(--secondary-color); 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 800; 
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .about-me-content { background-color: var(--secondary-color); padding: 50px; border-radius: 15px; }
-        .chess-piece { opacity: 0.15; }
+        .about-me-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--primary-color);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2em; } }
+        .chess-piece {
+            position: fixed;
+            font-size: 40px;
+            color: var(--secondary-color);
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Badge Autorità */
+        .badge-autorita {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
     </style>
 </head>
 <body>
-
     <div class="language-buttons">
-        <button class="language-button" onclick="changeLanguage('it')">IT</button>
+        <button class="language-button" onclick="changeLanguage('es')">ES</button>
         <button class="language-button" onclick="changeLanguage('en')">EN</button>
+        <button class="language-button" onclick="changeLanguage('it')">IT</button>
     </div>
+
+    <a href="#" class="logo">KS</a>
 
     <div class="container">
         <header>
-            <div class="authority-badge">ISTRUTTORE FSI | ARBITRO REGIONALE | GIOCATORE AGONISTA</div>
-            <h1 id="title">Kendry Salazar Scacchi Roma</h1>
-            <p class="tagline" id="tagline">Eccellenza Scacchistica in Presenza e Online</p>
+            <span class="badge-autorita">Istruttore FSI | Arbitro Regionale | Circolo 4 Torri</span>
+            <h1 id="title">Lezioni di scacchi</h1>
+            <p class="tagline" id="tagline">Istruttore di Scacchi a Roma e Online</p>
+            <img src="2.jpg" alt="hourses" class="header-image">
         </header>
 
-        <section class="services">
-            <div class="service">
-                <h2 id="rome-lessons">Lezioni a Roma</h2>
-                <p>Copertura totale della capitale, con disponibilità immediata nelle zone:</p>
-                <div class="zone-list">
-                    <strong>📍 Appia Nuova & Tuscolana</strong><br>
-                    <strong>📍 Parioli & Prati</strong><br>
-                    <strong>📍 San Giovanni & Centro</strong>
-                </div>
-            </div>
+        <div style="text-align: center;">
+            <a href="https://api.whatsapp.com/send?phone=+393508260806" class="contact-button" id="contact-button">PRENOTA UNA LEZIONE GRATUITA</a>
+        </div>
 
+        <section class="services" style="margin-top: 40px;">
             <div class="service">
-                <h2 id="kids-lessons">Scacchi per Bambini</h2>
-                <p>Corsi didattici specifici per lo sviluppo cognitivo dei più piccoli. Punti di riferimento:</p>
-                <div class="zone-list">
-                    <strong>♟️ Zona Marconi</strong> (Corsi pomeridiani)<br>
-                    <strong>♟️ Zona Colli Albani</strong> (Lezioni individuali/gruppo)
-                </div>
+                <div class="service-icon">♔</div>
+                <h2 id="adults-lessons">Lezioni per Adulti</h2>
+                <p id="adults-description">Strategie avanzate a Roma: Parioli, Prati e Appia Nuova.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♙</div>
+                <h2 id="kids-lessons">Lezioni per Bambini</h2>
+                <p id="kids-description">Corsi speciali in zona Marconi e Colli Albani per piccoli campioni.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♖</div>
+                <h2 id="rome-lessons">Lezioni a Roma</h2>
+                <p id="rome-description">In presenza in tutta Roma: Tuscolana, San Giovanni e centro.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">♘</div>
+                <h2 id="online-lessons">Lezioni Online</h2>
+                <p id="online-description">Flessibilità e comodità, ovunque tu sia nel mondo.</p>
             </div>
         </section>
+
+        <img src="w.jpg" alt="Kendry Salazar" class="full-width-image" style="width:100%; border-radius:10px;">
+        <p style="text-align: center; color: var(--secondary-color);">Foto:@jcardenas_photo</p>
 
         <section class="about-me">
             <div class="about-me-content">
-                <h2 id="about-me-title">Oltre l'Insegnamento: Autorità e Passione</h2>
-                <p id="about-me-text">
-                    Non sono solo un istruttore. La mia visione del gioco è completa:
-                    <ul>
-                        <li><strong>Arbitro Regionale:</strong> Conoscenza profonda del regolamento FIDE/FSI.</li>
-                        <li><strong>Giocatore Agonista:</strong> Tesserato con il prestigioso <strong>Circolo 4 Torri</strong> di Roma, porto l'esperienza del gioco vissuto nei tornei direttamente ai miei allievi.</li>
-                        <li><strong>Formatore:</strong> Specializzato in zone ad alta tradizione scacchistica come <strong>Prati</strong> e <strong>Parioli</strong>.</li>
+                <h2 id="about-me-title">Istruttore Certificato FSI, Arbitro e Giocatore Agonista</h2>
+                <img src="1.jpeg" alt="Kendry Salazar" class="about-me-image">
+                
+                <p>Mi chiamo <strong>Kendry Salazar</strong> e porto la mia esperienza di <strong>Arbitro Regionale</strong> e giocatore del <strong>Circolo 4 Torri</strong> direttamente sulla tua scacchiera. Che tu sia a <strong>Prati, Parioli o sulla Tuscolana</strong>, troveremo il percorso perfetto per te.</p>
+                
+                <h3 id="what-you-learn-title">Cosa Imparerai:</h3>
+                <ul id="what-you-learn-list" style="text-align: left; display: inline-block;">
                     </ul>
-                </p>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="https://api.whatsapp.com/send?phone=+393508260806" class="contact-button">RICHIEDI UNA PROVA GRATUITA</a>
-                </div>
+                
+                <h3 id="why-choose-me-title">Perché Scegliere Me?</h3>
+                <ul id="why-choose-me-list" style="text-align: left; display: inline-block;">
+                    </ul>
             </div>
         </section>
 
-        <footer style="text-align: center; padding: 40px; color: #555;">
-            <p>© 2026 Kendry Salazar - Istruttore FSI Roma - Arbitro Regionale - Circolo 4 Torri</p>
+        <section class="contact">
+            <h2 id="contact-title">Inizia il Tuo Viaggio</h2>
+            <p id="contact-info">Scacchilezioni@gmail.com | +39 350 826 0806</p>
+            <div class="contact-buttons">
+                <a href="mailto:scacchilezioni@gmail.com" class="contact-button">Email</a>
+                <a href="https://api.whatsapp.com/send?phone=+393508260806" class="contact-button">WhatsApp</a>
+            </div>
+        </section>
+
+        <footer>
+            <p id="footer-text">© 2026 Kendry Salazar - Istruttore FSI Roma - Arbitro Regionale</p>
         </footer>
     </div>
 
     <script>
-        // Il tuo script originale con le traduzioni aggiornate per includere le zone
+        // Traduzioni mantenute e arricchite con le tue nuove info
         const translations = {
             it: {
-                title: "Kendry Salazar Scacchi Roma",
-                tagline: "Istruttore FSI, Arbitro Regionale e Giocatore Agonista",
-                romeLessons: "Lezioni Private a Roma",
-                kidsLessons: "Scacchi per Bambini",
-                // ... aggiungi il resto delle traduzioni qui
+                title: "Lezioni di Scacchi",
+                tagline: "Istruttore FSI e Arbitro a Roma e Online",
+                contactButton: "PRENOTA UNA LEZIONE GRATUITA",
+                adultsLessons: "Lezioni per Adulti",
+                adultsDescription: "Strategie avanzate a Roma: Parioli, Prati e Appia Nuova.",
+                kidsLessons: "Lezioni per Bambini",
+                kidsDescription: "Corsi speciali in zona Marconi e Colli Albani per piccoli campioni.",
+                romeLessons: "Lezioni a Roma",
+                romeDescription: "Disponibile in zona Tuscolana, San Giovanni e Prati.",
+                onlineLessons: "Lezioni Online",
+                onlineDescription: "Impara comodamente da casa tua.",
+                aboutMeTitle: "Istruttore Certificato FSI, Arbitro e Giocatore Agonista",
+                whatYouLearnTitle: "Cosa imparerai",
+                whatYouLearnList: [
+                    "Aperture e tattiche vincenti",
+                    "Regolamento FIDE spiegato da un arbitro",
+                    "Analisi agonistica con esperienza di circolo"
+                ],
+                whyChooseMeTitle: "Perché scegliere me",
+                whyChooseMeList: [
+                    "Certificazione FSI e Arbitro Regionale",
+                    "Esperienza agonistica nel Circolo 4 Torri",
+                    "Prima lezione gratuita"
+                ],
+                contactTitle: "Contattami ora",
+                footerText: "© 2026 Kendry Salazar - Maestro di Scacchi Roma"
             }
+            // Aggiungi EN e ES qui...
         };
-        
+
         function changeLanguage(lang) {
             const t = translations[lang] || translations['it'];
             document.getElementById('title').textContent = t.title;
             document.getElementById('tagline').textContent = t.tagline;
-            // ... logica per aggiornare gli ID
+            document.getElementById('contact-button').textContent = t.contactButton;
+            document.getElementById('adults-lessons').textContent = t.adultsLessons;
+            document.getElementById('adults-description').textContent = t.adultsDescription;
+            document.getElementById('kids-lessons').textContent = t.kidsLessons;
+            document.getElementById('kids-description').textContent = t.kidsDescription;
+            document.getElementById('rome-lessons').textContent = t.romeLessons;
+            document.getElementById('rome-description').textContent = t.romeDescription;
+            document.getElementById('online-lessons').textContent = t.onlineLessons;
+            document.getElementById('online-description').textContent = t.onlineDescription;
+            document.getElementById('about-me-title').textContent = t.aboutMeTitle;
+            document.getElementById('what-you-learn-title').textContent = t.whatYouLearnTitle;
+            document.getElementById('what-you-learn-list').innerHTML = t.whatYouLearnList.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('why-choose-me-title').textContent = t.whyChooseMeTitle;
+            document.getElementById('why-choose-me-list').innerHTML = t.whyChooseMeList.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('footer-text').textContent = t.footerText;
         }
 
-        // Animazione pezzi (mantenuta)
-        // ... (resto del codice anime.js)
+        document.addEventListener('DOMContentLoaded', () => changeLanguage('it'));
+
+        // Animazione pezzi (Tua originale)
+        const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
+        for (let i = 0; i < 10; i++) {
+            const piece = document.createElement('div');
+            piece.className = 'chess-piece';
+            piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
+            piece.style.left = `${Math.random() * 100}vw`;
+            piece.style.top = `${Math.random() * 100}vh`;
+            document.body.appendChild(piece);
+            animatePiece(piece);
+        }
+
+        function animatePiece(piece) {
+            anime({
+                targets: piece,
+                translateX: () => anime.random(-500, 500),
+                translateY: () => anime.random(-500, 500),
+                rotate: () => anime.random(-360, 360),
+                duration: () => anime.random(3000, 5000),
+                easing: 'easeInOutQuad',
+                complete: () => animatePiece(piece)
+            });
+        }
     </script>
 </body>
 </html>
