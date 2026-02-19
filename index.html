@@ -1,1307 +1,621 @@
 <!DOCTYPE html>
-
 <html lang="it">
-
     <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kendry Salazar - Istruttore di Scacchi</title>
-
+    <title>Kendry Salazar - Istruttore di Scacchi a Roma</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
     <style>
 
-
-
 h2, h3, h4 {
-
     color: yellow; /* O un'altra tonalità di giallo, es. #FFD700 per gold */
-
 }
-
         /* CSS Variables */
-
         :root {
-
             --primary-color: #FFD700; /* Gold */
-
             --secondary-color: #2E3A59; /* Dark Blue */
-
             --text-color: #98FB98; /* Pale Green */
-
             --background-color: #87CEEB; /* Sky Blue */
-
             --hover-darken: hsl(246, 89%, 33%); /* Darker primary for hover */
-
         }
-
-
 
         /* General Body Styles */
-
         body {
-
             font-family: 'Roboto', sans-serif;
-
             background-color: var(--background-color);
-
             color: var(--text-color);
-
             line-height: 1.6;
-
             margin: 0;
-
             padding: 0;
-
             overflow-x: hidden; /* Prevent horizontal scroll */
-
         }
-
-
 
         /* Layout Container */
-
         .container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             padding: 20px;
-
             position: relative;
-
             z-index: 1; /* Ensures content is above animated pieces */
-
             display: flex;
-
             flex-direction: column;
-
         }
-
-
 
         /* Fixed Elements */
-
         .logo {
-
             position: fixed;
-
             top: 20px;
-
             left: 20px;
-
             font-size: 2em;
-
             font-weight: bold;
-
             color: var(--primary-color);
-
             text-decoration: none;
-
             z-index: 1000; /* High z-index to be on top */
-
         }
-
-
 
         .language-buttons {
-
             position: fixed;
-
             top: 20px;
-
             right: 20px;
-
             z-index: 1000;
-
         }
-
-
 
         .language-button {
-
             background-color: var(--primary-color);
-
             color: var(--secondary-color);
-
             border: none;
-
             padding: 10px 20px;
-
             margin: 5px;
-
             border-radius: 5px;
-
             cursor: pointer;
-
             font-weight: bold;
-
             transition: background-color 0.3s ease;
-
         }
-
-
 
         .language-button:hover {
-
             background-color: var(--hover-darken); /* Use a darker shade for hover */
-
         }
-
-
 
         /* Header Styles */
-
         header {
-
             text-align: center;
-
             padding: 10px 0;
-
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-
             border-radius: 10px;
-
             margin-bottom: 40px;
-
         }
-
-
 
         h1 {
-
             font-size: 3.5em;
-
             margin-bottom: 10px;
-
             color: var(--primary-color); /* Changed to primary-color for consistency */
-
         }
-
-       
-
+        
         .tagline {
-
             font-size: 1.5em;
-
             color: var(--text-color);
-
         }
-
-
 
         /* Image Styles */
-
         img {
-
             max-width: 100%; /* Ensures images are responsive */
-
             height: auto; /* Maintain aspect ratio */
-
             border-radius: 10px; /* Consistent with other elements */
-
             margin-bottom: 20px; /* Space after images */
-
         }
-
-
 
         /* Services and About Me Sections */
-
         .services, .reviews-container { /* Added reviews-container here for similar grid layout */
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
             gap: 20px;
-
             margin-bottom: 40px;
-
         }
-
-
 
         .service, .review, .about-me-content {
-
             background-color: var(--secondary-color);
-
             padding: 30px;
-
             border-radius: 10px;
-
             text-align: center;
-
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-
         }
-
-
 
         .service:hover, .review:hover, .about-me-content:hover {
-
             transform: translateY(-10px);
-
             box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
-
         }
-
-
 
         .service h2, .about-me h2, .reviews h2 {
-
             color: var(--primary-color);
-
         }
-
-
 
         .service-icon {
-
             font-size: 3em;
-
             margin-bottom: 20px;
-
             color: var(--primary-color); /* Changed to primary-color for better visibility */
-
         }
-
-
 
         /* Contact Section */
-
         .contact, .reviews { /* Grouped contact and reviews for common styles */
-
             text-align: center;
-
             background-color: var(--secondary-color);
-
             padding: 40px;
-
             border-radius: 10px;
-
             margin-bottom: 40px;
-
         }
-
-
 
         .contact-buttons {
-
             display: flex;
-
             justify-content: center;
-
             gap: 20px;
-
             margin-top: 20px;
-
         }
-
-
 
         .contact-button {
-
             display: inline-block;
-
             padding: 10px 20px;
-
             background-color: var(--primary-color); /* Changed background color */
-
             color: var(--secondary-color); /* Changed text color */
-
             text-decoration: none;
-
             border-radius: 5px;
-
             font-weight: bold;
-
             transition: background-color 0.3s ease, transform 0.3s ease;
-
         }
-
-
 
         .contact-button:hover {
-
             background-color: var(--hover-darken);
-
             transform: scale(1.05);
-
         }
-
-
 
         /* About Me Specific Styles */
-
         .about-me-content {
-
             text-align: left;
-
             grid-column: 1 / -1; /* Make it span all columns in grid */
-
             padding: 40px; /* More padding for a section */
-
         }
-
-       
-
+        
         .about-me-image {
-
             width: 200px;
-
             height: 200px;
-
             border-radius: 50%;
-
             object-fit: cover;
-
             margin-bottom: 20px;
-
             border: 3px solid var(--primary-color); /* Changed border color */
-
             display: block; /* Center image */
-
             margin-left: auto;
-
             margin-right: auto;
-
         }
-
-
 
         .chiamata-all-azione {
-
             font-size: 1.2em;
-
             font-weight: bold;
-
             color: var(--primary-color);
-
             margin-top: 20px;
-
             margin-bottom: 10px;
-
         }
-
-
 
         /* Reviews Section */
-
         .review-text {
-
             font-style: italic;
-
             color: var(--text-color);
-
             margin-bottom: 10px;
-
         }
-
-
 
         .review-author {
-
             color: var(--primary-color);
-
             font-weight: bold;
-
             text-align: right;
-
             display: block; /* Ensure author is on its own line */
-
         }
-
-
 
         /* Footer Styles */
-
         footer {
-
             text-align: center;
-
             padding: 20px 0;
-
             font-size: 0.9em;
-
             color: #808080; /* Gray color for footer text */
-
             margin-top: 40px;
-
         }
-
-
 
         .social-buttons {
-
             display: flex;
-
             justify-content: center;
-
             gap: 20px;
-
             margin-top: 20px;
-
         }
-
-
 
         .social-button {
-
             display: flex; /* Use flexbox for centering SVG */
-
             align-items: center;
-
             justify-content: center;
-
             width: 40px;
-
             height: 40px;
-
             background-color: var(--primary-color);
-
             color: var(--secondary-color);
-
             border-radius: 50%;
-
             font-size: 20px;
-
             transition: background-color 0.3s ease;
-
         }
-
-
 
         .social-button:hover {
-
             background-color: var(--hover-darken);
-
         }
-
-
 
         .social-button svg {
-
             width: 24px;
-
             height: 24px;
-
             stroke: var(--secondary-color); /* Ensure SVG color matches button text */
-
         }
-
-
 
         /* Animated Chess Pieces */
-
         .chess-piece {
-
             position: fixed;
-
             font-size: 40px;
-
             color: var(--secondary-color);
-
             opacity: 0.5;
-
             z-index: 0;
-
             pointer-events: none; /* Prevent interaction with pieces */
-
         }
-
-
 
         /* Responsive Adjustments */
-
         @media (max-width: 768px) {
-
             .logo {
-
                 font-size: 1.5em;
-
                 top: 10px;
-
                 left: 10px;
-
             }
-
-
 
             h1 {
-
                 font-size: 2.5em;
-
             }
-
-
 
             .tagline {
-
                 font-size: 1.2em;
-
             }
-
-
 
             .service, .review, .about-me-content {
-
                 padding: 20px;
-
             }
-
-
 
             .contact-buttons, .social-buttons {
-
                 flex-direction: column;
-
                 gap: 10px;
-
             }
-
-
 
             .contact-button, .social-button {
-
                 width: 100%;
-
                 max-width: 250px; /* Limit width on smaller screens */
-
                 margin: 0 auto; /* Center buttons */
-
             }
-
         }
-
     </style>
-
 </head>
-
 <body>
-
     <div class="language-buttons">
-
         <button class="language-button" onclick="changeLanguage('es')">ES</button>
-
         <button class="language-button" onclick="changeLanguage('en')">EN</button>
-
         <button class="language-button" onclick="changeLanguage('it')">IT</button>
-
     </div>
-
-
 
     <a href="#" class="logo">KS</a>
 
-
-
     <div class="container">
-
         <header>
-
-            <h1 id="title">Lezioni di scacchi</h1>
-
-            <p class="tagline" id="tagline">Istruttore di Scacchi a Roma e Online</p>
-
-            <img src="2.jpg" alt="hourses" class="header-image">
-
+            <h1 id="title">Istruttore di Scacchi a Roma</h1>
+            <p class="tagline" id="tagline">Lezioni di Scacchi a Roma (Appia, Prati, Parioli) e Online</p>
+            <img src="2.jpg" alt="Lezioni di scacchi a Roma con Kendry Salazar" class="header-image">
         </header>
 
-
-
         <div class="contact-buttons">
-
             <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button" id="contact-button">PRENOTA UNA LEZIONE GRATUITA</a>
-
         </div>
-
-        <br><p style="text-align: center; margin-top: 30px;">
-
-    <p style="text-align: center; margin-top: 30px;">
-
-   <p style="text-align: center; margin-top: 30px;">
-
-   
-
-    <p style="text-align: center; margin-top: 30px;">
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScncMFbRtUmrJOO9Qz2l40OG45Mrb8VmSqeA4YfnKWIkdzS8A/viewform?usp=header" target="_blank" style="
-
-        display: inline-block;
-
-        background-color: #4CAF50; /* Un bel verde, puoi cambiarlo */
-
-        color: white;
-
-        padding: 15px 30px;
-
-        text-align: center;
-
-        text-decoration: none;
-
-        font-size: 18px;
-
-        font-weight: bold;
-
-        border-radius: 8px;
-
-        transition: background-color 0.3s ease;
-
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-    " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
-
-        Consulta orario
-
-    </a>
-
-</p>
-
-</p>
-
-</p>
-
-</p>
-
-
+        
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScncMFbRtUmrJOO9Qz2l40OG45Mrb8VmSqeA4YfnKWIkdzS8A/viewform?usp=header" target="_blank" style="
+                display: inline-block;
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 30px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: bold;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
+                Consulta orario
+            </a>
+        </p>
 
         <section class="services">
-
             <div class="service">
-
                 <div class="service-icon">♔</div>
-
                 <h2 id="adults-lessons">Lezioni per Adulti</h2>
-
                 <p id="adults-description">Strategie avanzate e tattiche per giocatori di tutti i livelli, preparazione di aperture e tornei.</p>
-
             </div>
-
             <div class="service">
-
                 <div class="service-icon">♙</div>
-
                 <h2 id="kids-lessons">Lezioni per Bambini</h2>
-
                 <p id="kids-description">Approccio divertente e educativo per giovani menti brillanti dai 5 anni in su.</p>
-
             </div>
-
             <div class="service">
-
                 <div class="service-icon">♖</div>
-
                 <h2 id="rome-lessons">Lezioni a Roma</h2>
-
                 <p id="rome-description">Incontri personali per un'esperienza di apprendimento immersiva.</p>
-
             </div>
-
             <div class="service">
-
                 <div class="service-icon">♘</div>
-
                 <h2 id="online-lessons">Lezioni Online</h2>
-
                 <p id="online-description">Flessibilità e comodità, ovunque tu sia nel mondo.</p>
-
             </div>
-
         </section>
 
-
-
-        <img src="w.jpg" alt="Kendry Salazar" class="full-width-image">
-
+        <img src="w.jpg" alt="Kendry Salazar scacchi Roma" class="full-width-image">
         <p style="text-align: center; color: var(--secondary-color);">Foto:@jcardenas_photo</p>
 
-
-
        <section class="about-me">
-
-    <div class="about-me-content">
-
-        <h2 id="about-me-title">Lezioni di Scacchi Online e in Presenza: Impara, Migliora e Appassionati con un Istruttore Certificato FSI!</h2>
-
-        <img src="1.jpeg" alt="Foto di Kendry Salazar, istruttore di scacchi" class="about-me-image">
-
-       
-
-        <p>Sei affascinato dagli scacchi e desideri imparare da zero o perfezionare il tuo gioco? Che tu sia un **bambino curioso** pronto a scoprire un mondo nuovo o un **adulto desideroso di sfidare la mente**, sei nel posto giusto!</p>
-
-       
-
-        <p>Mi chiamo Kendry Salazar e sono un **istruttore di scacchi certificato FSI** con anni di esperienza. La mia passione è rendere gli scacchi **accessibili, stimolanti e divertenti** per studenti di **tutte le età e livelli**. Offro lezioni **totalmente personalizzate**, progettate per adattarsi al tuo **ritmo e stile di apprendimento unico**, sia **online** (comodamente da casa tua) che **in presenza** (per un'esperienza più diretta).</p>
-
-       
-
-        <h3 id="what-you-learn-title">Cosa Offro e Cosa Imparerai:</h3>
-
-       
-
-        <h4 id="for-kids-title">Per i Più Giovani (Bambini e Principianti):</h4>
-
-        <p>Un approccio **ludico e coinvolgente** per esplorare il mondo degli scacchi.</p>
-
-        <ul id="for-kids-list">
-
-            <li><strong>Le Basi del Gioco:</strong> Impariamo a muovere i pezzi, le regole fondamentali e i primi obiettivi in modo semplice e divertente.</li>
-
-            <li><strong>Sviluppo di Abilità Cruciali:</strong> Stimoliamo la **concentrazione, il pensiero logico, la pazienza e la capacità di prendere decisioni**, competenze utili ben oltre la scacchiera.</li>
-
-            <li><strong>Divertimento e Motivazione:</strong> Rendiamo l'apprendimento un'esperienza positiva, costruendo fiducia passo dopo passo.</li>
-
-        </ul>
-
-       
-
-        <h4 id="for-adults-title">Per Adulti e Giocatori di Ogni Livello:</h4>
-
-        <p>Un percorso di crescita personalizzato per raggiungere i tuoi obiettivi specifici.</p>
-
-        <ul id="for-adults-list">
-
-            <li><strong>Strategie e Tattiche Vincenti:</strong> Approfondiremo come pianificare le tue mosse, riconoscere schemi, analizzare posizioni e sviluppare piani efficaci per ogni partita.</li>
-
-            <li><strong>Aperture, Mediogioco e Finali:</strong> Studieremo insieme le aperture più adatte al tuo stile, miglioreremo la comprensione del mediogioco e ti insegnerò a gestire con maestria i finali di partita.</li>
-
-            <li><strong>Analisi Approfondita delle Partite:</strong> Analizzeremo le tue partite (e quelle dei grandi maestri) per identificare punti di forza, errori comuni e aree di miglioramento, trasformando ogni sconfitta in una lezione.</li>
-
-            <li><strong>Lezioni "Su Misura":</strong> Che tu sia un principiante assoluto, un giocatore intermedio che vuole superare un plateau o un avanzato che cerca il perfezionamento, ogni lezione è calibrata sulle tue esigenze.</li>
-
-        </ul>
-
-       
-
-        <h3 id="why-choose-me-title">Perché Scegliere Me?</h3>
-
-        <ul id="why-choose-me-list">
-
-            <li><strong>Certificazione FSI:</strong> Garanzia di professionalità, competenza e un approccio didattico consolidato.</li>
-
-            <li><strong>Metodologia Personalizzata:</strong> Ogni lezione è modellata intorno a te, ai tuoi obiettivi e al tuo stile di apprendimento.</li>
-
-            <li><strong>Flessibilità Massima:</strong> Scegli la comodità delle lezioni **online** o il contatto diretto delle lezioni **in presenza**, negli orari che preferisci.</li>
-
-            <li><strong>Prima Lezione Gratuita!</strong> Un'occasione perfetta per conoscerci, valutare il mio metodo e capire come posso aiutarti a raggiungere i tuoi obiettivi scacchistici, senza alcun impegno.</li>
-
-        </ul>
-
-       
-
-        <p class="chiamata-all-azione" id="call-to-action"><strong>Non aspettare oltre per fare la tua prossima mossa vincente sulla scacchiera!</strong></p>
-
-        <p id="final-message">Contattami subito per prenotare la tua prima lezione gratuita o per ricevere maggiori informazioni. Sono qui per guidarti nel tuo viaggio nel fantastico mondo degli scacchi!</p>
-
-    </div>
-
-</section>
-
-
+            <div class="about-me-content">
+                <h2 id="about-me-title">Lezioni di Scacchi a Roma e Online: Impara con un Istruttore Certificato FSI e Arbitro Regionale</h2>
+                <img src="1.jpeg" alt="Kendry Salazar - Arbitro Regionale e Istruttore di Scacchi a Roma" class="about-me-image">
+                
+                <p>Sei affascinato dagli scacchi e cerchi un **istruttore di scacchi a Roma**? Che tu sia un bambino o un adulto, ti aiuto a migliorare il tuo gioco nei quartieri **Appia, Prati, Parioli, Marconi e Colli Albani**, oppure comodamente online.</p>
+                
+                <p>Mi chiamo Kendry Salazar, sono un **Arbitro Regionale** e **Giocatore Agonista del Circolo 4 Torri**. Come **istruttore di scacchi certificato FSI**, metto la mia esperienza al servizio di chi vuole scalare le classifiche o imparare da zero con un metodo strutturato e professionale.</p>
+                
+                <h3 id="what-you-learn-title">Cosa Offro e Cosa Imparerai:</h3>
+                
+                <h4 id="for-kids-title">Per i Più Giovani a Roma (Bambini e Principianti):</h4>
+                <p>Un approccio **ludico e coinvolgente** disponibile a domicilio in zona **Marconi, Colli Albani** e tutta Roma.</p>
+                <ul id="for-kids-list">
+                    <li><strong>Le Basi del Gioco:</strong> Impariamo a muovere i pezzi e le regole fondamentali in modo semplice e divertente.</li>
+                    <li><strong>Sviluppo di Abilità Cruciali:</strong> Stimoliamo la concentrazione e il pensiero logico.</li>
+                    <li><strong>Divertimento e Motivazione:</strong> Rendiamo l'apprendimento un'esperienza positiva.</li>
+                </ul>
+                
+                <h4 id="for-adults-title">Per Adulti e Agonisti (Preparazione Tornei):</h4>
+                <p>Un percorso di crescita basato sulla mia esperienza al **Circolo 4 Torri**.</p>
+                <ul id="for-adults-list">
+                    <li><strong>Strategie e Tattiche da Arbitro Regionale:</strong> Analisi profonda con occhio tecnico ufficiale.</li>
+                    <li><strong>Aperture e Finali:</strong> Studio personalizzato delle linee più efficaci per il gioco agonistico.</li>
+                    <li><strong>Lezioni a Domicilio:</strong> Massima flessibilità nei quartieri **Appia, Prati, Parioli** e Marconi.</li>
+                </ul>
+                
+                <h3 id="why-choose-me-title">Perché Scegliere Me?</h3>
+                <ul id="why-choose-me-list">
+                    <li><strong>Certificazione FSI e Arbitro Regionale:</strong> Garanzia di professionalità ufficiale.</li>
+                    <li><strong>Esperienza Agonistica:</strong> Giocatore attivo presso il **Circolo 4 Torri**.</li>
+                    <li><strong>Presenza a Roma:</strong> Copertura Appia, Prati, Parioli, Marconi, Colli Albani.</li>
+                    <li><strong>Prima Lezione Gratuita!</strong> Conosciamoci senza impegno.</li>
+                </ul>
+                
+                <p class="chiamata-all-azione" id="call-to-action"><strong>Fai la tua prossima mossa vincente: prenota ora a Roma o Online!</strong></p>
+                <p id="final-message">Contattami subito per la tua prima lezione gratuita. Sono pronto a guidarti nel fantastico mondo degli scacchi!</p>
+            </div>
+        </section>
 
         <section class="contact">
-
             <h2 id="contact-title">Inizia il Tuo Viaggio negli Scacchi</h2>
-
             <p id="contact-text">Pronto a migliorare il tuo gioco? Contattami per una consulenza gratuita!</p>
-
             <p id="contact-info">Scacchilezioni@gmail.com &nbsp; &nbsp; +39.350.826.08.06</p>
-
             <div class="contact-buttons">
-
                 <a href="mailto:scacchilezioni@gmail.com" class="contact-button" id="email-button">Email</a>
-
                 <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20sono%20interessato%20alle%20tue%20lezioni%20di%20scacchi" class="contact-button" id="whatsapp-button">WhatsApp</a>
-
             </div>
-
         </section>
-
-
 
         <section class="reviews">
-
             <h2 id="reviews-title">Recensioni dei Miei Alunni</h2>
-
             <div class="reviews-container">
-
                 <div class="review">
-
                     <p class="review-text">"Kendry è un insegnante fantastico! Ha reso gli scacchi divertenti e facili da capire. Consigliatissimo!"</p>
-
                     <p class="review-author">- Marco, Roma</p>
-
                 </div>
-
                 <div class="review">
-
                     <p class="review-text">"Le lezioni online sono state molto utili. Kendry è paziente e chiaro nelle spiegazioni."</p>
-
                     <p class="review-author">- Sara, Milano</p>
-
                 </div>
-
                 <div class="review">
-
                     <p class="review-text">"Mio figlio di 8 anni ha imparato tantissimo e si diverte un mondo. Grazie Kendry!"</p>
-
                     <p class="review-author">- Laura, Bologna</p>
-
                 </div>
-
             </div>
-
         </section>
 
-
-
         <footer>
-
-            <p id="footer-text">© 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati.</p>
-
+            <p id="footer-text">© 2023 Kendry Salazar - Istruttore di Scacchi Roma. Tutti i diritti riservati.</p>
             <div class="social-buttons">
-
                 <a href="https://www.facebook.com/profile.php?id=100070009290661" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-
                 </a>
-
                 <a href="https://www.instagram.com/scacchilezioni" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-
                 </a>
-
                 <a href="https://youtube.com/yourchannel" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-
                 </a>
-
             </div>
-
         </footer>
-
     </div>
 
-
-
     <script>
-
-        // Translations Object
-
+        // 3. BLOCCO TRADUZIONI SEO AGGIORNATO
         const translations = {
-
             es: {
-
                 title: "Lecciones de Ajedrez",
-
                 tagline: "Instructor de Ajedrez en Roma y Online",
-
                 contactButton: "Reserva una clase gratuita",
-
                 adultsLessons: "Lecciones para Adultos",
-
-                adultsDescription: "Estrategias avanzadas y tácticas para jugadores de todos los niveles, preparación de aperturas y torneos.",
-
+                adultsDescription: "Estrategias avanzadas y tácticas para jugadores de todos los niveles.",
                 kidsLessons: "Lecciones para Niños",
-
-                kidsDescription: "Enfoque divertido y educativo para mentes jóvenes brillantes a partir de 5 años.",
-
+                kidsDescription: "Enfoque divertido y educativo a partir de 5 años.",
                 romeLessons: "Lecciones en Roma",
-
-                romeDescription: "Encuentros personales para una experiencia de aprendizaje inmersiva.",
-
+                romeDescription: "Encuentros personales para aprender ajedrez en Roma.",
                 onlineLessons: "Lecciones Online",
-
-                onlineDescription: "Flexibilidad y comodidad, estés donde estés en el mundo.",
-
+                onlineDescription: "Flexibilidad y comodidad en todo el mundo.",
                 aboutMeTitle: "Sobre Mí",
-
-                aboutMeDescription: "Lecciones de Ajedrez Online y en Persona con un Instructor Certificado FSI!",
-
+                aboutMeDescription: "Lecciones de Ajedrez Online y en Persona con Instructor Certificado FSI!",
                 chessLessonsTitle: "Lecciones de Ajedrez",
-
                 lessonsSubtitle: "Online y en Persona",
-
-                lessonsDescription: "¿Eres un apasionado del ajedrez y quieres mejorar tu juego? ¿O deseas aprender desde cero con un instructor experto? ¡Estoy aquí para ayudarte!",
-
-                aboutMeText: "Mi nombre es Kendry Salazar y soy un instructor certificado FSI con años de experiencia enseñando a jugadores de todas las edades y niveles. Ofrezco lecciones de ajedrez personalizadas, tanto online como en persona, para ayudarte a alcanzar tus objetivos.",
-
+                lessonsDescription: "¿Quieres mejorar tu juego con un experto? ¡Estoy aquí!",
+                aboutMeText: "Mi nombre es Kendry Salazar e instructor FSI.",
                 whatYouLearnTitle: "Qué aprenderás",
-
-                whatYouLearnList: [
-
-                    "Estrategias y tácticas ganadoras: Descubre cómo planificar movimientos, reconocer patrones y desarrollar estrategias efectivas para cada partida.",
-
-                    "Aperturas y finales: Estudiaremos juntos las aperturas más comunes y te enseñaré cómo manejar mejor los finales de partida.",
-
-                    "Análisis de partidas: Analizaremos tus partidas y las de los grandes maestros para identificar puntos fuertes y áreas de mejora.",
-
-                    "Lecciones a medida: Cada lección se adapta a tu nivel (principiante, intermedio o avanzado) y a tus necesidades específicas."
-
-                ],
-
+                whatYouLearnList: ["Estrategias ganadoras", "Aperturas y finales", "Análisis de partidas", "Lecciones a medida"],
                 whyChooseMeTitle: "Por qué elegirme",
-
-                whyChooseMeList: [
-
-                    "Certificación FSI: Garantía de profesionalidad y competencia.",
-
-                    "Horarios flexibles: Puedes elegir entre lecciones online o en persona, en los horarios que prefieras.",
-
-                    "Primera lección gratuita: ¡Conóceme y evalúa sin compromiso si mi método es el adecuado para ti!"
-
-                ],
-
-                callToAction: "¡Reserva ahora tu primera lección de ajedrez!",
-
-                finalMessage: "¡No esperes más! Mejora tus habilidades en el ajedrez con un maestro experto. Contáctame ahora para reservar tu primera lección gratuita o para obtener más información.",
-
-                contactTitle: "Comienza tu Viaje en el Ajedrez",
-
-                contactText: "¿Listo para mejorar tu juego? ¡Contáctame para una consulta gratuita!",
-
-                contactInfo: "Scacchilezioni@gmail.com     +39.350.826.08.06",
-
+                whyChooseMeList: ["Certificación FSI", "Horarios flexibles", "Primera lección gratuita"],
+                callToAction: "¡Reserva ahora!",
+                finalMessage: "¡Mejora tus habilidades hoy!",
+                contactTitle: "Comienza tu Viaje",
+                contactText: "¡Contáctame para una consulta!",
+                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
                 emailButton: "Email",
-
                 whatsappButton: "WhatsApp",
-
-                reviewsTitle: "Opiniones de mis alumnos",
-
-                footerText: "© 2023 Kendry Salazar - Instructor de Ajedrez. Todos los derechos reservados."
-
+                reviewsTitle: "Opiniones",
+                footerText: "© 2023 Kendry Salazar - Ajedrez Roma."
             },
-
             en: {
-
-                title: "Chess Lessons",
-
+                title: "Chess Lessons Roma",
                 tagline: "Chess Instructor in Rome and Online",
-
                 contactButton: "Book a free lesson",
-
-                adultsLessons: "Lessons for Adults",
-
-                adultsDescription: "Advanced strategies and tactics for players of all levels, opening preparation, and tournaments.",
-
-                kidsLessons: "Lessons for Kids",
-
-                kidsDescription: "Fun and educational approach for young brilliant minds aged 5 and up.",
-
+                adultsLessons: "Adult Lessons",
+                adultsDescription: "Advanced strategies for all levels.",
+                kidsLessons: "Kids Lessons",
+                kidsDescription: "Fun approach for young minds.",
                 romeLessons: "Lessons in Rome",
-
-                romeDescription: "Personal meetings for an immersive learning experience.",
-
+                romeDescription: "In-person lessons in Appia, Prati, Parioli.",
                 onlineLessons: "Online Lessons",
-
-                onlineDescription: "Flexibility and convenience, wherever you are in the world.",
-
+                onlineDescription: "Quality FSI lessons anywhere.",
                 aboutMeTitle: "About Me",
-
-                aboutMeDescription: "Online and In-Person Chess Lessons with a Certified FSI Instructor!",
-
-                chessLessonsTitle: "Chess Lessons",
-
-                lessonsSubtitle: "Online and In-Person",
-
-                lessonsDescription: "Are you passionate about chess and want to improve your game? Or do you want to learn from scratch with an experienced instructor? I'm here to help you!",
-
-                aboutMeText: "My name is Kendry Salazar, and I am a certified FSI instructor with years of experience teaching players of all ages and levels. I offer personalized chess lessons, both online and in-person, to help you achieve your goals.",
-
-                whatYouLearnTitle: "What You Will Learn",
-
-                whatYouLearnList: [
-
-                    "Winning strategies and tactics: Discover how to plan moves, recognize patterns, and develop effective strategies for each game.",
-
-                    "Openings and endings: We will study the most common openings together, and I will teach you how to better manage endgames.",
-
-                    "Game analysis: We will analyze your games and those of grandmasters to identify strengths and areas for improvement.",
-
-                    "Tailored lessons: Each lesson is adapted to your level (beginner, intermediate, or advanced) and your specific needs."
-
-                ],
-
-                whyChooseMeTitle: "Why Choose Me",
-
-                whyChooseMeList: [
-
-                    "FSI Certification: Guarantee of professionalism and competence.",
-
-                    "Flexible schedules: You can choose between online or in-person lessons at your preferred times.",
-
-                    "First free lesson: Get to know me and evaluate without obligation if my method is right for you!"
-
-                ],
-
-                callToAction: "Book your first chess lesson now!",
-
-                finalMessage: "Don't wait! Improve your chess skills with an expert master. Contact me now to book your first free lesson or to get more information.",
-
-                contactTitle: "Start Your Chess Journey",
-
-                contactText: "Ready to improve your game? Contact me for a free consultation!",
-
-                contactInfo: "Scacchilezioni@gmail.com     +39.350.826.08.06",
-
+                aboutMeDescription: "Online and In-Person Chess Instructor.",
+                chessLessonsTitle: "Chess Coaching",
+                lessonsSubtitle: "Rome & Online",
+                lessonsDescription: "Improve your game with an FSI instructor.",
+                aboutMeText: "My name is Kendry Salazar, FSI instructor.",
+                whatYouLearnTitle: "Learning path",
+                whatYouLearnList: ["Tactics", "Endgames", "Game analysis", "Custom plan"],
+                whyChooseMeTitle: "Why me?",
+                whyChooseMeList: ["FSI Certified", "Flexible hours", "First lesson free"],
+                callToAction: "Book now!",
+                finalMessage: "Start your chess journey!",
+                contactTitle: "Contact Me",
+                contactText: "Ready to play?",
+                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
                 emailButton: "Email",
-
                 whatsappButton: "WhatsApp",
-
-                reviewsTitle: "Student Reviews",
-
-                footerText: "© 2023 Kendry Salazar - Chess Instructor. All rights reserved."
-
+                reviewsTitle: "Reviews",
+                footerText: "© 2023 Kendry Salazar - Chess Rome."
             },
-
             it: {
-
-                title: "Lezioni di Scacchi",
-
-                tagline: "Istruttore di Scacchi a Roma e Online",
-
+                title: "Istruttore Scacchi Roma",
+                tagline: "Lezioni a Roma (Appia, Prati, Parioli) e Online",
                 contactButton: "Prenota una lezione gratuita",
-
-                adultsLessons: "Lezioni per Adulti",
-
-                adultsDescription: "Strategie avanzate e tattiche per giocatori di tutti i livelli, preparazione di aperture e tornei.",
-
-                kidsLessons: "Lezioni per Bambini",
-
-                kidsDescription: "Approccio divertente e educativo per giovani menti brillanti dai 5 anni in su.",
-
+                adultsLessons: "Lezioni Adulti e Agonisti",
+                adultsDescription: "Preparazione tornei con un Arbitro Regionale e Giocatore del Circolo 4 Torri.",
+                kidsLessons: "Scacchi per Bambini",
+                kidsDescription: "Corsi a Roma (Marconi, Colli Albani) per piccoli campioni.",
                 romeLessons: "Lezioni a Roma",
-
-                romeDescription: "Incontri personali per un'esperienza di apprendimento immersiva.",
-
+                romeDescription: "Disponibile a domicilio: Appia, Prati, Parioli, Marconi.",
                 onlineLessons: "Lezioni Online",
-
-                onlineDescription: "Flessibilità e comodità, ovunque tu sia nel mondo.",
-
-                aboutMeTitle: "Su di Me",
-
-                aboutMeDescription: "Lezioni di Scacchi Online e In Presenza con un Istruttore Certificato FSI!",
-
+                onlineDescription: "Qualità FSI ovunque tu sia, orari flessibili.",
+                aboutMeTitle: "Kendry Salazar",
+                aboutMeDescription: "Istruttore FSI, Arbitro Regionale e Giocatore Agonista al Circolo 4 Torri",
                 chessLessonsTitle: "Lezioni di Scacchi",
-
-                lessonsSubtitle: "Online e in Presenza",
-
-                lessonsDescription: "Sei appassionato di scacchi e vuoi migliorare il tuo gioco? Oppure desideri imparare da zero con un insegnante esperto? Sono qui per aiutarti!",
-
-                aboutMeText: "Mi chiamo Kendry Salazar e sono un istruttore certificato FSI con anni di esperienza nell'insegnamento a giocatori di tutte le età e livelli. Offro lezioni di scacchi personalizzate, sia online che in presenza, per aiutarti a raggiungere i tuoi obiettivi.",
-
+                lessonsSubtitle: "Roma e Online",
+                lessonsDescription: "Cerchi un istruttore di scacchi a Roma? Offro lezioni personalizzate.",
+                aboutMeText: "Mi chiamo Kendry Salazar, sono Istruttore FSI e Arbitro Regionale.",
                 whatYouLearnTitle: "Cosa imparerai",
-
                 whatYouLearnList: [
-
-                    "Strategie e tattiche vincenti: Scopri come pianificare le mosse, riconoscere schemi e sviluppare strategie efficaci per ogni partita.",
-
-                    "Aperture e finali: Studieremo insieme le aperture più comuni e ti insegnerò come gestire al meglio i finali di partita.",
-
-                    "Analisi delle partite: Analizzeremo le tue partite e quelle dei grandi maestri per identificare punti di forza e aree di miglioramento.",
-
-                    "Lezioni su misura: Ogni lezione è adattata al tuo livello (principiante, intermedio o avanzato) e alle tue esigenze specifiche."
-
+                    "Strategie vincenti: Analisi con un Arbitro Regionale.",
+                    "Aperture e finali: Studio profondo (Circolo 4 Torri).",
+                    "Lezioni Roma: Appia, Prati, Parioli, Marconi, Colli Albani.",
+                    "Analisi partite: Trasforma i tuoi errori in punti Elo."
                 ],
-
                 whyChooseMeTitle: "Perché scegliere me",
-
                 whyChooseMeList: [
-
-                    "Certificazione FSI: Garanzia di professionalità e competenza.",
-
-                    "Orari flessibili: Puoi scegliere tra lezioni online o in presenza, negli orari che preferisci.",
-
-                    "Prima lezione gratuita: Conosciamoci e valuta senza impegno se il mio metodo è quello giusto per te!"
-
+                    "Arbitro Regionale e Istruttore FSI.",
+                    "Giocatore Agonista Circolo 4 Torri.",
+                    "Copertura quartieri Appia, Prati, Parioli, Marconi.",
+                    "Prima lezione gratuita!"
                 ],
-
-                callToAction: "Prenota ora la tua prima lezione di scacchi!",
-
-                finalMessage: "Non aspettare! Migliora le tue abilità negli scacchi con un maestro esperto. Contattami subito per prenotare la tua prima lezione gratuita o per ricevere maggiori informazioni.",
-
-                contactTitle: "Inizia il Tuo Viaggio negli Scacchi",
-
-                contactText: "Pronto a migliorare il tuo gioco? Contattami per una consulenza gratuita!",
-
-                contactInfo: "Scacchilezioni@gmail.com     +39.350.826.08.06",
-
-                emailButton: "Email",
-
+                callToAction: "Inizia ora le tue lezioni a Roma!",
+                finalMessage: "Migliora con un esperto a domicilio o online.",
+                contactTitle: "Contatta l'Istruttore",
+                contactText: "Pronto a migliorare il tuo gioco?",
+                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
+                emailButton: "Invia Email",
                 whatsappButton: "WhatsApp",
-
-                reviewsTitle: "Recensioni dei Miei Alunni",
-
-                footerText: "© 2023 Kendry Salazar - Istruttore di Scacchi. Tutti i diritti riservati."
-
+                reviewsTitle: "Recensioni",
+                footerText: "© 2023 Kendry Salazar - Istruttore Scacchi Roma."
             }
-
         };
 
-
-
-        // Function to change language
-
         function changeLanguage(language) {
-
             const translation = translations[language];
-
-           
-
-            // Update page title based on language
-
             document.title = `Kendry Salazar - ${translation.tagline}`;
-
-
-
-            // Update text content for all elements with IDs
-
             document.getElementById('title').textContent = translation.title;
-
-            document.getElementById('tagline').textContent = translation.tagline; // Added tagline update
-
+            document.getElementById('tagline').textContent = translation.tagline;
             document.getElementById('contact-button').textContent = translation.contactButton;
-
             document.getElementById('adults-lessons').textContent = translation.adultsLessons;
-
             document.getElementById('adults-description').textContent = translation.adultsDescription;
-
             document.getElementById('kids-lessons').textContent = translation.kidsLessons;
-
             document.getElementById('kids-description').textContent = translation.kidsDescription;
-
             document.getElementById('rome-lessons').textContent = translation.romeLessons;
-
             document.getElementById('rome-description').textContent = translation.romeDescription;
-
             document.getElementById('online-lessons').textContent = translation.onlineLessons;
-
             document.getElementById('online-description').textContent = translation.onlineDescription;
-
             document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
-
-            document.getElementById('about-me-description').textContent = translation.aboutMeDescription;
-
-            document.getElementById('chess-lessons-title').textContent = translation.chessLessonsTitle;
-
-            document.getElementById('lessons-subtitle').textContent = translation.lessonsSubtitle;
-
-            document.getElementById('lessons-description').textContent = translation.lessonsDescription;
-
-            document.getElementById('about-me-text').textContent = translation.aboutMeText;
-
+            // Corretti ID mancanti per About Me Description
+            const amDesc = document.getElementById('about-me-description');
+            if(amDesc) amDesc.textContent = translation.aboutMeDescription;
+            
             document.getElementById('what-you-learn-title').textContent = translation.whatYouLearnTitle;
-
-            // For lists, re-render the inner HTML using map and join
-
             document.getElementById('what-you-learn-list').innerHTML = translation.whatYouLearnList.map(item => `<li>${item}</li>`).join('');
-
             document.getElementById('why-choose-me-title').textContent = translation.whyChooseMeTitle;
-
             document.getElementById('why-choose-me-list').innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
-
             document.getElementById('call-to-action').textContent = translation.callToAction;
-
             document.getElementById('final-message').textContent = translation.finalMessage;
-
             document.getElementById('contact-title').textContent = translation.contactTitle;
-
             document.getElementById('contact-text').textContent = translation.contactText;
-
             document.getElementById('contact-info').textContent = translation.contactInfo;
-
             document.getElementById('email-button').textContent = translation.emailButton;
-
             document.getElementById('whatsapp-button').textContent = translation.whatsappButton;
-
-            document.getElementById('reviews-title').textContent = translation.reviewsTitle; // Added reviews title update
-
+            document.getElementById('reviews-title').textContent = translation.reviewsTitle;
             document.getElementById('footer-text').textContent = translation.footerText;
-
         }
-
-
-
-        // Initialize language on page load (e.g., set to Italian by default)
 
         document.addEventListener('DOMContentLoaded', () => {
-
-            changeLanguage('it'); // Set default language to Italian
-
+            changeLanguage('it');
         });
 
-
-
-        // Chess Piece Animation
-
         const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
-
         const numPieces = 10;
 
-
-
         function createChessPiece() {
-
             const piece = document.createElement('div');
-
             piece.className = 'chess-piece';
-
             piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
-
             piece.style.left = `${Math.random() * 100}vw`;
-
             piece.style.top = `${Math.random() * 100}vh`;
-
             document.body.appendChild(piece);
-
             return piece;
-
         }
-
-
 
         for (let i = 0; i < numPieces; i++) {
-
             const piece = createChessPiece();
-
             animatePiece(piece);
-
         }
-
-
 
         function animatePiece(piece) {
-
             anime({
-
                 targets: piece,
-
                 translateX: () => anime.random(-500, 500),
-
                 translateY: () => anime.random(-500, 500),
-
                 rotate: () => anime.random(-360, 360),
-
                 duration: () => anime.random(3000, 5000),
-
                 easing: 'easeInOutQuad',
-
                 complete: () => animatePiece(piece)
-
             });
-
         }
-
     </script>
-
 </body>
-
 </html>
