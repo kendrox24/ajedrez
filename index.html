@@ -15,8 +15,8 @@
             --primary-color: #FFD700; /* Oro per titoli e bottoni */
             --hover-darken: #CCAC00; /* Oro scuro al passaggio del mouse */
             --secondary-color: #2E3A59; /* Blu scuro per i riquadri */
-            --background-color: #1E293B; /* Sfondo scuro elegante */
-            --text-color: #E2E8F0; /* Testo chiaro per lo sfondo scuro */
+            --background-color: #F4F6F9; /* Grigio-azzurro chiarissimo ed elegante */
+            --text-color: #333333; /* Grigio scuro per leggerezza sul fondo chiaro */
         }
 
         /* General Body Styles */
@@ -55,6 +55,7 @@
             color: var(--primary-color);
             text-decoration: none;
             z-index: 1000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Aiuta a leggere il logo se passa sopra elementi chiari */
         }
 
         .language-buttons {
@@ -83,20 +84,23 @@
         /* Header Styles */
         header {
             text-align: center;
-            padding: 10px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+            padding: 20px 0;
+            background-color: var(--secondary-color); /* Sfondo blu per l'intestazione */
             border-radius: 10px;
             margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         h1 {
             font-size: 3.5em;
             margin-bottom: 10px;
+            padding: 0 20px;
         }
         
         .tagline {
             font-size: 1.5em;
-            color: var(--text-color);
+            color: #FFFFFF; /* Testo bianco per contrasto col blu */
+            margin-bottom: 30px;
         }
 
         /* Image Styles */
@@ -118,17 +122,20 @@
             margin-bottom: 40px;
         }
 
+        /* 💡 RISOLTO IL PROBLEMA DEL TESTO: Aggiunto color: #FFFFFF; */
         .service, .review, .about-me-content {
             background-color: var(--secondary-color);
+            color: #FFFFFF; 
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .service:hover, .review:hover, .about-me-content:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(46, 58, 89, 0.3);
         }
 
         .service-icon {
@@ -138,12 +145,15 @@
         }
 
         /* Contact Section */
+        /* 💡 RISOLTO IL PROBLEMA DEL TESTO: Aggiunto color: #FFFFFF; */
         .contact, .reviews { 
             text-align: center;
             background-color: var(--secondary-color);
+            color: #FFFFFF;
             padding: 40px;
             border-radius: 10px;
             margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .contact-buttons {
@@ -216,7 +226,7 @@
             text-align: center;
             padding: 20px 0;
             font-size: 0.9em;
-            color: var(--text-color);
+            color: var(--secondary-color);
             font-weight: bold;
             margin-top: 40px;
         }
@@ -256,7 +266,7 @@
             position: fixed;
             font-size: 40px;
             color: var(--secondary-color);
-            opacity: 0.5;
+            opacity: 0.15; /* Leggermente più trasparenti per non disturbare sul fondo chiaro */
             z-index: 0;
             pointer-events: none; 
         }
@@ -295,7 +305,7 @@
         <header>
             <h1 id="title">Kendry Salazar - Istruttore di Scacchi a Roma</h1>
             <p class="tagline" id="tagline">Lezioni di Scacchi a Roma (Appia, Prati, Parioli) e Online</p>
-            <img src="lezioni-scacchi-roma_1.webp" alt="Lezioni di scacchi a Roma con Kendry Salazar" width="800" height="400" loading="lazy">
+            <img src="lezioni-scacchi-roma.webp" alt="Lezioni di scacchi a Roma con Kendry Salazar" width="800" height="400" loading="lazy">
         </header>
 
         <div class="contact-buttons">
@@ -331,7 +341,7 @@
             </div>
         </section>
 
-        <img src="maestro-scacchi-dry-salazar.webp" alt="Kendry Salazar scacchi Roma" width="800" height="400" loading="lazy">
+        <img src="maestro-scacchi-kendry-salazar.webp" alt="Kendry Salazar scacchi Roma" width="800" height="400" loading="lazy">
         <p style="text-align: center; color: var(--secondary-color); font-weight: bold;">Foto:@jcardenas_photo</p>
 
        <section class="about-me">
@@ -401,246 +411,4 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
                 </a>
                 <a href="https://www.youtube.com/" class="social-button" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-                </a>
-            </div>
-        </footer>
-    </div> <script>
-        // 1. OGGETTO TRADUZIONI ESPANSO E CON H1 OTTIMIZZATO
-        const translations = {
-            es: {
-                title: "Kendry Salazar - Clases de Ajedrez",
-                tagline: "Instructor de Ajedrez en Roma y Online",
-                contactButton: "RESERVA UNA CLASE GRATUITA",
-                scheduleButton: "Consulta el horario",
-                adultsLessons: "Clases para Adultos",
-                adultsDescription: "Estrategias avanzadas y tácticas para jugadores de todos los niveles, preparación de aperturas y torneos.",
-                kidsLessons: "Clases para Niños",
-                kidsDescription: "Enfoque divertido y educativo para mentes brillantes a partir de los 5 años.",
-                romeLessons: "Clases en Roma",
-                romeDescription: "Encuentros personales para una experiencia de aprendizaje inmersiva.",
-                onlineLessons: "Clases Online",
-                onlineDescription: "Flexibilidad y comodidad, estés donde estés en el mundo.",
-                aboutMeTitle: "Clases de Ajedrez en Roma y Online: Aprende con un Instructor Certificado FSI y Árbitro Regional",
-                aboutMeP1: "¿Te fascina el ajedrez y buscas un instructor en Roma? Ya seas un niño o un adulto, te ayudo a mejorar tu juego en los barrios de Appia, Prati, Parioli, Marconi y Colli Albani y en toda Roma, o cómodamente online.",
-                aboutMeP2: "Me llamo Kendry Salazar, soy Árbitro Regional y Jugador Competitivo del Club 4 Torri. Como instructor de ajedrez certificado por la FSI, pongo mi experiencia al servicio de quienes quieren escalar en las clasificaciones o aprender desde cero con un método estructurado y profesional.",
-                whatYouLearnTitle: "Qué Ofrezco y Qué Aprenderás:",
-                forKidsTitle: "Para los Más Jóvenes en Roma (Niños y Principiantes):",
-                forKidsDesc: "Un enfoque lúdico y atractivo disponible a domicilio en la zona de Marconi, Colli Albani y toda Roma.",
-                forKidsList: [
-                    "<strong>Los Conceptos Básicos del Juego:</strong> Aprendemos a mover las piezas y las reglas fundamentales de forma sencilla y divertida.",
-                    "<strong>Desarrollo de Habilidades Cruciales:</strong> Estimulamos la concentración y el pensamiento lógico.",
-                    "<strong>Diversión y Motivación:</strong> Hacemos del aprendizaje una experiencia positiva."
-                ],
-                forAdultsTitle: "Para Adultos y Competidores (Preparación para Torneos):",
-                forAdultsDesc: "Un camino de crecimiento basado en mi experiencia en el Club 4 Torri.",
-                forAdultsList: [
-                    "<strong>Estrategias y Tácticas de un Árbitro Regional:</strong> Análisis profundo con ojo técnico oficial.",
-                    "<strong>Aperturas y Finales:</strong> Estudio personalizado de las líneas más efectivas para el juego competitivo.",
-                    "<strong>Clases a Domicilio:</strong> Máxima flexibilidad en los barrios de Appia, Prati, Parioli y Marconi."
-                ],
-                whyChooseMeTitle: "¿Por Qué Elegirme?",
-                whyChooseMeList: [
-                    "<strong>Certificación FSI y Árbitro Regional:</strong> Garantía de profesionalidad oficial.",
-                    "<strong>Experiencia Competitiva:</strong> Jugador activo en el Club 4 Torri.",
-                    "<strong>Presencia en Roma:</strong> Cobertura en Appia, Prati, Parioli, Marconi, Colli Albani.",
-                    "<strong>¡Primera Lección Gratis!</strong> Conozcámonos sin compromiso."
-                ],
-                callToAction: "<strong>Haz tu próximo movimiento ganador: ¡reserva ahora en Roma u Online!</strong>",
-                finalMessage: "Contáctame hoy mismo para tu primera clase gratuita. ¡Estoy listo para guiarte en el fantástico mundo del ajedrez!",
-                contactTitle: "Comienza tu Viaje en el Ajedrez",
-                contactText: "¿Listo para mejorar tu juego? ¡Contáctame para una consulta gratuita!",
-                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
-                emailButton: "Email",
-                whatsappButton: "WhatsApp",
-                mapsButton: "Ver en Google Maps",
-                availabilityInfo: "📍 Disponible en la zona: Appia, Prati, Parioli, Marconi, Colli Albani.",
-                footerText: "© 2026 Kendry Salazar - Instructor de Ajedrez Roma. Todos los derechos reservados."
-            },
-            en: {
-                title: "Kendry Salazar - Chess Lessons in Rome",
-                tagline: "Chess Instructor in Rome and Online",
-                contactButton: "BOOK A FREE LESSON",
-                scheduleButton: "Check Schedule",
-                adultsLessons: "Adult Lessons",
-                adultsDescription: "Advanced strategies and tactics for players of all levels, opening and tournament preparation.",
-                kidsLessons: "Kids Lessons",
-                kidsDescription: "Fun and educational approach for bright young minds from 5 years up.",
-                romeLessons: "Lessons in Rome",
-                romeDescription: "In-person meetings for an immersive learning experience.",
-                onlineLessons: "Online Lessons",
-                onlineDescription: "Flexibility and convenience, wherever you are in the world.",
-                aboutMeTitle: "Chess Lessons in Rome and Online: Learn with an FSI Certified Instructor and Regional Arbiter",
-                aboutMeP1: "Are you fascinated by chess and looking for an instructor in Rome? Whether you are a child or an adult, I can help you improve your game in the Appia, Prati, Parioli, Marconi, and Colli Albani neighborhoods and all over Rome, or comfortably online.",
-                aboutMeP2: "My name is Kendry Salazar, I am a Regional Arbiter and Competitive Player at the 4 Torri Club. As an FSI certified chess instructor, I put my experience at the service of those who want to climb the rankings or learn from scratch with a structured and professional method.",
-                whatYouLearnTitle: "What I Offer and What You Will Learn:",
-                forKidsTitle: "For the Youngest in Rome (Kids and Beginners):",
-                forKidsDesc: "A playful and engaging approach available at home in the Marconi, Colli Albani area and all over Rome.",
-                forKidsList: [
-                    "<strong>The Basics of the Game:</strong> We learn how to move the pieces and the fundamental rules in a simple and fun way.",
-                    "<strong>Development of Crucial Skills:</strong> We stimulate concentration and logical thinking.",
-                    "<strong>Fun and Motivation:</strong> We make learning a positive experience."
-                ],
-                forAdultsTitle: "For Adults and Competitors (Tournament Preparation):",
-                forAdultsDesc: "A growth path based on my experience at the 4 Torri Club.",
-                forAdultsList: [
-                    "<strong>Strategies and Tactics from a Regional Arbiter:</strong> Deep analysis with an official technical eye.",
-                    "<strong>Openings and Endgames:</strong> Personalized study of the most effective lines for competitive play.",
-                    "<strong>In-Home Lessons:</strong> Maximum flexibility in the Appia, Prati, Parioli, and Marconi neighborhoods."
-                ],
-                whyChooseMeTitle: "Why Choose Me?",
-                whyChooseMeList: [
-                    "<strong>FSI Certification and Regional Arbiter:</strong> Guarantee of official professionalism.",
-                    "<strong>Competitive Experience:</strong> Active player at the 4 Torri Club.",
-                    "<strong>Presence in Rome:</strong> Covering Appia, Prati, Parioli, Marconi, Colli Albani.",
-                    "<strong>First Lesson Free!</strong> Let's get to know each other without obligation."
-                ],
-                callToAction: "<strong>Make your next winning move: book now in Rome or Online!</strong>",
-                finalMessage: "Contact me today for your first free lesson. I am ready to guide you in the fantastic world of chess!",
-                contactTitle: "Start Your Chess Journey",
-                contactText: "Ready to improve your game? Contact me for a free consultation!",
-                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
-                emailButton: "Email",
-                whatsappButton: "WhatsApp",
-                mapsButton: "View on Google Maps",
-                availabilityInfo: "📍 Available in the area: Appia, Prati, Parioli, Marconi, Colli Albani.",
-                footerText: "© 2026 Kendry Salazar - Chess Instructor Rome. All rights reserved."
-            },
-            it: {
-                title: "Kendry Salazar - Istruttore di Scacchi a Roma",
-                tagline: "Lezioni di Scacchi a Roma (Appia, Prati, Parioli) e Online",
-                contactButton: "PRENOTA UNA LEZIONE GRATUITA",
-                scheduleButton: "Consulta orario",
-                adultsLessons: "Lezioni per Adulti",
-                adultsDescription: "Strategie avanzate e tattiche per giocatori di tutti i livelli, preparazione di aperture e tornei.",
-                kidsLessons: "Lezioni per Bambini",
-                kidsDescription: "Approccio divertente e educativo per giovani menti brillanti dai 5 anni in su.",
-                romeLessons: "Lezioni a Roma",
-                romeDescription: "Incontri personali per un'esperienza di apprendimento immersiva.",
-                onlineLessons: "Lezioni Online",
-                onlineDescription: "Flessibilità e comodità, ovunque tu sia nel mondo.",
-                aboutMeTitle: "Lezioni di Scacchi a Roma e Online: Impara con un Istruttore Certificato FSI e Arbitro Regionale",
-                aboutMeP1: "Sei affascinato dagli scacchi e cerchi un istruttore di scacchi a Roma? Che tu sia un bambino o un adulto, ti aiuto a migliorare il tuo gioco nei quartieri Appia, Prati, Parioli, Marconi e Colli Albani e tutta Roma, oppure comodamente online.",
-                aboutMeP2: "Mi chiamo Kendry Salazar, sono un Arbitro Regionale e Giocatore Agonista del Circolo 4 Torri. Come istruttore di scacchi certificato FSI, metto la mia esperienza al servizio di chi vuole scalare le classifiche o imparare da zero con un metodo strutturato e professionale.",
-                whatYouLearnTitle: "Cosa Offro e Cosa Imparerai:",
-                forKidsTitle: "Per i Più Giovani a Roma (Bambini e Principianti):",
-                forKidsDesc: "Un approccio ludico e coinvolgente disponibile a domicilio in zona Marconi, Colli Albani e tutta Roma.",
-                forKidsList: [
-                    "<strong>Le Basi del Gioco:</strong> Impariamo a muovere i pezzi e le regole fondamentali in modo semplice e divertente.",
-                    "<strong>Sviluppo di Abilità Cruciali:</strong> Stimoliamo la concentrazione e il pensiero logico.",
-                    "<strong>Divertimento e Motivazione:</strong> Rendiamo l'apprendimento un'esperienza positiva."
-                ],
-                forAdultsTitle: "Per Adulti e Agonisti (Preparazione Tornei):",
-                forAdultsDesc: "Un percorso di crescita basato sulla mia esperienza al Circolo 4 Torri.",
-                forAdultsList: [
-                    "<strong>Strategie e Tattiche da Arbitro Regionale:</strong> Analisi profonda con occhio tecnico ufficiale.",
-                    "<strong>Aperture e Finali:</strong> Studio personalizzato delle linee più efficaci per il gioco agonistico.",
-                    "<strong>Lezioni a Domicilio:</strong> Massima flessibilità nei quartieri Appia, Prati, Parioli e Marconi."
-                ],
-                whyChooseMeTitle: "Perché Scegliere Me?",
-                whyChooseMeList: [
-                    "<strong>Certificazione FSI e Arbitro Regionale:</strong> Garanzia di professionalità ufficiale.",
-                    "<strong>Esperienza Agonistica:</strong> Giocatore attivo presso il Circolo 4 Torri.",
-                    "<strong>Presenza a Roma:</strong> Copertura Appia, Prati, Parioli, Marconi, Colli Albani.",
-                    "<strong>Prima Lezione Gratuita!</strong> Conosciamoci senza impegno."
-                ],
-                callToAction: "<strong>Fai la tua prossima mossa vincente: prenota ora a Roma o Online!</strong>",
-                finalMessage: "Contattami subito per la tua prima lezione gratuita. Sono pronto a guidarti nel fantastico mondo degli scacchi!",
-                contactTitle: "Inizia il Tuo Viaggio negli Scacchi",
-                contactText: "Pronto a migliorare il tuo gioco? Contattami per una consulenza gratuita!",
-                contactInfo: "Scacchilezioni@gmail.com    +39.350.826.08.06",
-                emailButton: "Email",
-                whatsappButton: "WhatsApp",
-                mapsButton: "Vedi su Google Maps",
-                availabilityInfo: "📍 Disponibile in zona: Appia, Prati, Parioli, Marconi, Colli Albani.",
-                footerText: "© 2026 Kendry Salazar - Istruttore di Scacchi Roma. Tutti i diritti riservati."
-            }
-        };
-
-        function changeLanguage(language) {
-            const translation = translations[language];
-            
-            document.title = translation.title;
-
-            const elements = {
-                'title': translation.title,
-                'tagline': translation.tagline,
-                'contact-button': translation.contactButton,
-                'schedule-button': translation.scheduleButton,
-                'adults-lessons': translation.adultsLessons,
-                'adults-description': translation.adultsDescription,
-                'kids-lessons': translation.kidsLessons,
-                'kids-description': translation.kidsDescription,
-                'rome-lessons': translation.romeLessons,
-                'rome-description': translation.romeDescription,
-                'online-lessons': translation.onlineLessons,
-                'online-description': translation.onlineDescription,
-                'about-me-title': translation.aboutMeTitle,
-                'about-me-p1': translation.aboutMeP1,
-                'about-me-p2': translation.aboutMeP2,
-                'what-you-learn-title': translation.whatYouLearnTitle,
-                'for-kids-title': translation.forKidsTitle,
-                'for-kids-desc': translation.forKidsDesc,
-                'for-adults-title': translation.forAdultsTitle,
-                'for-adults-desc': translation.forAdultsDesc,
-                'why-choose-me-title': translation.whyChooseMeTitle,
-                'call-to-action': translation.callToAction,
-                'final-message': translation.finalMessage,
-                'contact-title': translation.contactTitle,
-                'contact-text': translation.contactText,
-                'contact-info': translation.contactInfo,
-                'email-button': translation.emailButton,
-                'whatsapp-button': translation.whatsappButton,
-                'maps-button': translation.mapsButton,
-                'availability-info': translation.availabilityInfo,
-                'footer-text': translation.footerText
-            };
-
-            for (let id in elements) {
-                const el = document.getElementById(id);
-                if (el) el.innerHTML = elements[id];
-            }
-
-            const kidsList = document.getElementById('for-kids-list');
-            if (kidsList) kidsList.innerHTML = translation.forKidsList.map(item => `<li>${item}</li>`).join('');
-
-            const adultsList = document.getElementById('for-adults-list');
-            if (adultsList) adultsList.innerHTML = translation.forAdultsList.map(item => `<li>${item}</li>`).join('');
-
-            const whyList = document.getElementById('why-choose-me-list');
-            if (whyList) whyList.innerHTML = translation.whyChooseMeList.map(item => `<li>${item}</li>`).join('');
-        }
-
-        // 3. ANIMAZIONI
-        document.addEventListener('DOMContentLoaded', () => {
-            changeLanguage('it');
-
-            const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙'];
-            const numPieces = 10;
-
-            for (let i = 0; i < numPieces; i++) {
-                const piece = document.createElement('div');
-                piece.className = 'chess-piece';
-                piece.textContent = chessPieces[Math.floor(Math.random() * chessPieces.length)];
-                piece.style.left = `${Math.random() * 100}vw`;
-                piece.style.top = `${Math.random() * 100}vh`;
-                document.body.appendChild(piece);
-                
-                animatePiece(piece);
-            }
-        });
-
-        function animatePiece(piece) {
-            anime({
-                targets: piece,
-                translateX: () => anime.random(-500, 500),
-                translateY: () => anime.random(-500, 500),
-                rotate: () => anime.random(-360, 360),
-                duration: () => anime.random(3000, 5000),
-                easing: 'easeInOutQuad',
-                complete: () => animatePiece(piece)
-            });
-        }
-    </script>
-    </body>
-</html>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12
