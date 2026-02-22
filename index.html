@@ -62,12 +62,28 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: bold;
-            color: var(--secondary-color);
+            color: #F4D03F !important; /* Giallo oro forzato */
+            background-color: #2E3A59 !important; /* Blu scuro forzato */
+            padding: 5px 15px;
+            border-radius: 8px;
             text-decoration: none;
             z-index: 1000;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #2E3A59 !important; /* Blu scuro forzato */
+            color: #FFFFFF !important; /* Testo bianco forzato */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        
+        
         }
 
         .language-buttons {
@@ -96,10 +112,12 @@
             text-align: center;
             padding: 40px 0;
             background-color: var(--secondary-color);
+            color: #FFFFFF; /* Aggiunto per risolvere l'errore di contrasto */
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+                }
 
         h1 { font-size: 3.5em; margin-bottom: 10px; padding: 0 20px; }
         .tagline { font-size: 1.5em; color: #FFFFFF; margin-bottom: 30px; }
