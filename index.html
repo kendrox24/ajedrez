@@ -239,15 +239,7 @@
 
         .social-button:hover { background-color: var(--hover-darken); color: white; transform: scale(1.1); }
 
-        /* Animated Chess Pieces */
-        .chess-piece {
-            position: fixed;
-            font-size: 40px;
-            color: var(--secondary-color);
-            opacity: 0.15;
-            z-index: 0;
-            pointer-events: none; 
-        }
+    
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
@@ -261,12 +253,7 @@
 </head>
 
 <body>
-    <div class="chess-piece" style="top: 10%; left: 5%;">♔</div>
-    <div class="chess-piece" style="top: 20%; right: 10%;">♕</div>
-    <div class="chess-piece" style="bottom: 15%; left: 15%;">♖</div>
-    <div class="chess-piece" style="bottom: 25%; right: 5%;">♘</div>
-    <div class="chess-piece" style="top: 50%; left: 50%; opacity: 0.05;">♙</div>
-
+  
     <div class="language-buttons">
         <button class="language-button" onclick="changeLanguage('es')">ES</button>
         <button class="language-button" onclick="changeLanguage('en')">EN</button>
