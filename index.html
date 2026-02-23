@@ -124,8 +124,21 @@
         .reviews-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .review-card { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 320px; border-top: 5px solid #D4AF37; color: #333; }
            /* Cambia il colore delle stelline */
+/* 1. Scurisci le stelline nelle recensioni */
 .stars {
-    color: #B8860B; /* Un oro più intenso che garantisce il contrasto */
+    color: #B8860B !important; /* Un oro più profondo (Dark Goldenrod) */
+}
+
+/* 2. Scurisci i testi secondari su fondo bianco (es. "Roma, Prati") */
+.review-card p strong, 
+.review-card p span {
+    color: #8B6508 !important; /* Un bronzo/oro scuro molto leggibile */
+}
+
+/* 3. Se hai bottoni con testo bianco su fondo oro, 
+   assicurati che il font sia Bold (grassetto) */
+.contact-cta, .language-button {
+    font-weight: 800;
 }
 
 /* Cambia il colore della località nelle recensioni */
