@@ -239,6 +239,54 @@
             .contact-button, .schedule-button { width: 100%; max-width: 250px; margin: 0 auto; }
             .nav-menu { padding: 0 10px; }
         }
+
+        .reviews-section {
+    padding: 60px 20px;
+    background-color: #f4f7f9; /* Grigio chiarissimo per far risaltare il bianco */
+}
+.section-title {
+    text-align: center;
+    color: #002147; /* Blu Navy */
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+.reviews-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.review-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 320px;
+    border-top: 5px solid #D4AF37; /* Riga Oro superiore */
+    transition: transform 0.3s ease;
+}
+.review-card:hover {
+    transform: translateY(-5px);
+}
+.stars {
+    color: #D4AF37; /* Oro */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.review-text {
+    font-style: italic;
+    color: #444;
+    line-height: 1.6;
+}
+.review-author {
+    margin-top: 20px;
+    color: #002147;
+    font-size: 0.9rem;
+}
+.location {
+    color: #D4AF37;
+    font-weight: bold;
+}
     </style>
 </head>
 
@@ -514,5 +562,27 @@
             changeLanguage('it'); // Imposta lingua di default
         });
     </script>
+    <section class="reviews-section">
+    <div class="container">
+        <h2 class="section-title">Cosa dicono gli allievi</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Kendry è un istruttore eccezionale. Mio figlio ha fatto passi da gigante nella concentrazione e nella strategia. Molto professionale."</p>
+                <p class="review-author"><strong>Alessandro M.</strong> <br> <span class="location">Roma, Prati</span></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Excellent chess lessons in English. Kendry is very patient and his method is very clear. Highly recommended for expats in Rome!"</p>
+                <p class="review-author"><strong>Sarah J.</strong> <br> <span class="location">Centro Storico</span></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Lezioni private di alto livello. La comodità delle sessioni a domicilio a Parioli è un valore aggiunto impagabile."</p>
+                <p class="review-author"><strong>Roberto F.</strong> <br> <span class="location">Roma, Parioli</span></p>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
