@@ -287,6 +287,33 @@
     color: #D4AF37;
     font-weight: bold;
 }
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* Altezza generosa per mostrare bene la scacchiera */
+    /* Il gradiente serve a scurire un po' l'immagine per leggere meglio i testi */
+    background-image: linear-gradient(rgba(0, 33, 71, 0.5), rgba(0, 33, 71, 0.5)), url('lezioni-scacchi-roma-prati.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-section h1 {
+    color: #D4AF37; /* Oro per il titolo principale */
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
     </style>
 </head>
 
@@ -300,11 +327,22 @@
     <a href="#" class="logo">KS</a>
 
     <div class="container">
-        <header>
-            <h1 id="title">Lezioni di Scacchi Professionali a Roma e Online</h1>
-            <p class="tagline" id="tagline">Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online</p>
-            <img src="lezioni-scacchi-roma.webp" alt="Lezioni di scacchi a Roma e Online con Kendry Salazar" width="800" height="400" fetchpriority="high">
-        </header>
+      <header class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1>Lezioni di Scacchi Professionali a Roma e Online</h1>
+            <p>Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online</p>
+            <div class="contact-buttons">
+                <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20vorrei%20informazioni%20sulle%20tue%20lezioni" 
+                   class="contact-button" 
+                   id="contact-button"
+                   onclick="gtag('event', 'generate_lead');">
+                   PRENOTA UNA SESSIONE GRATUITA
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
 
         <nav class="nav-menu">
             <a href="#corsi" id="nav-corsi">I Corsi</a>
