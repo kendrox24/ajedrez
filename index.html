@@ -166,6 +166,22 @@
     transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 .social-button:hover { background-color: var(--hover-darken); color: white; transform: scale(1.1); }
+
+/* 1. Scurisci le stelline delle recensioni */
+.stars {
+    color: #B8860B !important; /* Un oro più scuro (Dark Goldenrod) */
+}
+
+/* 2. Scurisci il testo della località nelle recensioni (es. Roma, Prati) */
+.review-card p strong {
+    color: #8B6508 !important; /* Un bronzo/oro molto più leggibile */
+}
+
+/* 3. Assicurati che i link nel menu abbiano un contrasto forte */
+.nav-menu a {
+    color: #1A253F !important; /* Un blu molto scuro per risaltare sul giallo */
+    font-weight: 700;
+}
     </style>
 </head>
 
