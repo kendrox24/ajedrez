@@ -182,6 +182,37 @@
     color: #1A253F !important; /* Un blu molto scuro per risaltare sul giallo */
     font-weight: 700;
 }
+/* Stile Modale Privacy */
+.privacy-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.7); 
+    backdrop-filter: blur(3px);
+}
+.privacy-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+.close-privacy {
+    color: #B8860B; /* L'oro scuro per l'accessibilità! */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.privacy-content h2 { color: #1a1a1a; margin-top: 0; }
     </style>
 </head>
 
@@ -469,5 +500,21 @@
             changeLanguage('it'); // Inizializza lingua
         });
     </script>
+    <div id="privacyModal" class="privacy-modal">
+    <div class="privacy-content">
+        <span class="close-privacy" onclick="closePrivacy()">&times;</span>
+        <h2>Privacy & Cookie Policy</h2>
+        <p><strong>Titolare:</strong> Kendry Salazar – www.scacchilezioni.com</p>
+        <p>Questo sito utilizza <strong>Google Analytics 4</strong> e <strong>Google Ads</strong> per analizzare il traffico e ottimizzare le campagne pubblicitarie. I dati sono raccolti in forma anonima.</p>
+        <p>Utilizzando il sito, accetti l'uso dei cookie tecnici e analitici. Puoi gestire il tracciamento tramite le impostazioni del tuo browser.</p>
+        <p>Per richieste di cancellazione dati: [Tua Email]</p>
+        <hr>
+        <p><small>Servizi di terze parti: Google Ireland Limited. <a href="https://policies.google.com/privacy" target="_blank">Privacy Google</a></small></p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Kendry Salazar - <a href="javascript:void(0)" onclick="openPrivacy()" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
+</footer>
 </body>
 </html>
