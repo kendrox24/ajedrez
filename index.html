@@ -17,6 +17,17 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYMFW9JC6Y"></script>
     <script>
+        function openPrivacy() {
+    document.getElementById("privacyModal").style.display = "block";
+}
+function closePrivacy() {
+    document.getElementById("privacyModal").style.display = "none";
+}
+// Chiude se clicchi fuori dalla modale
+window.onclick = function(event) {
+    let modal = document.getElementById("privacyModal");
+    if (event.target == modal) { modal.style.display = "none"; }
+}
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
