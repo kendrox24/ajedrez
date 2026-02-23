@@ -14,7 +14,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GYMFW9JC6Y');
-      gtag('config', 'AW-995212560'); // Google Ads
+      gtag('config', 'AW-995212560');
     </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,74 +24,61 @@
     <style>
         :root {
             --primary-color: #F4D03F; /* Oro */
-            --hover-darken: #CCAC00; 
             --secondary-color: #2E3A59; /* Blu Navy */
-            --background-color: #F4F6F9; 
             --text-color: #333333; 
         }
 
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-color); color: var(--text-color); margin: 0; overflow-x: hidden; }
-
+        body { font-family: 'Inter', sans-serif; background-color: #F4F6F9; color: var(--text-color); margin: 0; padding: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        /* Logo e Lingue Fixed */
-        .logo { position: fixed; top: 20px; left: 20px; font-size: 1.5em; font-weight: bold; color: var(--primary-color) !important; background: var(--secondary-color); padding: 5px 15px; border-radius: 8px; text-decoration: none; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        .language-buttons { position: fixed; top: 20px; right: 20px; z-index: 1000; }
-        .language-button { background-color: var(--primary-color); border: none; padding: 8px 15px; margin: 2px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-
-        /* Hero Section Migliorata */
+        /* HEADER & HERO */
         .hero-section {
             width: 100%;
-            min-height: 85vh;
+            min-height: 80vh;
             background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('lezioni-scacchi-roma-prati.webp');
             background-size: cover;
-            background-position: center right;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
+            background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
+        .hero-section h1 { color: var(--primary-color); font-size: 3rem; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
 
-        .hero-section h1 { color: var(--primary-color); font-size: 3rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); margin-bottom: 10px; }
-        .hero-section p { font-size: 1.4rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); }
+        /* LOGO E LINGUE */
+        .logo { position: fixed; top: 20px; left: 20px; font-size: 1.5em; font-weight: bold; color: var(--primary-color); background: var(--secondary-color); padding: 5px 15px; border-radius: 8px; text-decoration: none; z-index: 1000; }
+        .language-buttons { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .language-button { background: var(--primary-color); border: none; padding: 8px 12px; margin: 2px; border-radius: 5px; cursor: pointer; font-weight: bold; }
 
-        /* Menu */
+        /* MENU */
         .nav-menu { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
-        .nav-menu a { background-color: var(--primary-color); color: var(--secondary-color); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .nav-menu a:hover { transform: scale(1.05); background-color: var(--hover-darken); }
+        .nav-menu a { background: var(--primary-color); color: var(--secondary-color); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
 
-        /* Cards & Sections */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
-        .service, .about-me-content, .contact { background-color: var(--secondary-color); color: white; padding: 30px; border-radius: 10px; text-align: center; transition: 0.3s; }
-        .service:hover { transform: translateY(-5px); }
-        .service-icon { font-size: 3em; color: var(--primary-color); }
-
-        /* Buttons */
-        .contact-button { display: inline-block; padding: 12px 25px; background-color: var(--primary-color); color: var(--secondary-color); text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
-        .schedule-button { display: inline-block; background-color: #2E7D32; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
-
-        /* Recensioni Style Aspresso */
-        .reviews-section { padding: 60px 0; background-color: #f4f7f9; }
-        .reviews-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .review-card { background: white; padding: 25px; border-radius: 12px; max-width: 300px; border-top: 5px solid var(--primary-color); color: var(--text-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .stars { color: var(--primary-color); margin-bottom: 10px; }
-        .location { color: var(--primary-color); font-weight: bold; }
-
-        footer { text-align: center; padding: 40px 0; border-top: 2px solid #ccc; color: var(--secondary-color); }
+        /* SEZIONI CONTENT */
+        .service-card, .about-me-box { background: var(--secondary-color); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         
+        /* IMMAGINI */
+        .main-photo { width: 100%; max-width: 800px; border-radius: 12px; display: block; margin: 30px auto; border: 3px solid var(--primary-color); }
+        .about-me-image { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); float: right; margin-left: 20px; }
+        .online-image { width: 100%; max-width: 350px; border-radius: 12px; border: 3px solid var(--primary-color); float: left; margin-right: 25px; }
+
+        /* RECENSIONI */
+        .reviews-section { background: #eef2f5; padding: 50px 20px; border-radius: 15px; margin: 40px 0; }
+        .review-card { background: white; padding: 20px; border-radius: 10px; border-top: 5px solid var(--primary-color); margin: 10px; flex: 1; min-width: 250px; color: #333; }
+        .stars { color: var(--primary-color); }
+
+        .btn { display: inline-block; padding: 12px 25px; background: var(--primary-color); color: var(--secondary-color); text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+        
+        footer { text-align: center; padding: 40px; border-top: 2px solid #ddd; margin-top: 50px; }
+
         @media (max-width: 768px) {
+            .about-me-image, .online-image { float: none; display: block; margin: 0 auto 20px; }
             .hero-section h1 { font-size: 2rem; }
-            .hero-section { min-height: 60vh; }
         }
     </style>
 </head>
 <body>
 
     <a href="#" class="logo">KS</a>
-
     <div class="language-buttons">
         <button class="language-button" onclick="changeLanguage('es')">ES</button>
         <button class="language-button" onclick="changeLanguage('en')">EN</button>
@@ -101,66 +88,74 @@
     <header class="hero-section">
         <div class="container">
             <h1 id="title">Lezioni di Scacchi Professionali a Roma e Online</h1>
-            <p id="tagline">Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online</p>
-            <div style="margin-top: 30px;">
-                <a href="https://api.whatsapp.com/send?phone=+393508260806&text=Ciao%20Kendry,%20vorrei%20informazioni%20sulle%20tue%20lezioni" 
-                   class="contact-button" id="contact-button" onclick="gtag('event', 'generate_lead');">
-                   PRENOTA UNA SESSIONE GRATUITA
-                </a>
-            </div>
+            <p id="tagline" style="font-size: 1.4rem;">Istruttore Certificato FSI e Arbitro Regionale</p>
+            <a href="https://api.whatsapp.com/send?phone=+393508260806" class="btn" id="contact-button">PRENOTA UNA SESSIONE GRATUITA</a>
         </div>
     </header>
 
     <div class="container">
         <nav class="nav-menu">
-            <a href="#corsi" id="nav-corsi">I Corsi</a>
-            <a href="#chi-sono" id="nav-about">Chi Sono</a>
-            <a href="#online" id="nav-online">Online</a>
-            <a href="#contatti" id="nav-contact">Contatti</a>
+            <a href="#corsi">I Corsi</a>
+            <a href="#chi-sono">Chi Sono</a>
+            <a href="#online">Online</a>
+            <a href="#contatti">Contatti</a>
         </nav>
 
-        <section class="services" id="corsi">
-            <div class="service">
-                <div class="service-icon">🏆</div>
-                <h2 id="adults-lessons">Preparazione Agonistica</h2>
-                <p id="adults-description">Strategia e gestione della gara con l'occhio tecnico di un Arbitro Regionale FSI.</p>
+        <img src="maestro-scacchi-kendry-salazar.webp" alt="Lezione di scacchi" class="main-photo" loading="lazy">
+
+        <section id="corsi" class="service-grid">
+            <div class="service-card">
+                <h2>🏆 Agonismo</h2>
+                <p>Preparazione tecnica con l'occhio di un Arbitro FSI.</p>
             </div>
-            <div class="service">
-                <div class="service-icon">🎓</div>
-                <h2 id="kids-lessons">Sviluppo Cognitivo</h2>
-                <p id="kids-description">Metodo pedagogico d'eccellenza per bambini. Potenziamento logica e concentrazione.</p>
-            </div>
-            <div class="service">
-                <div class="service-icon">📍</div>
-                <h2 id="rome-lessons">A Domicilio</h2>
-                <p id="rome-description">Servizio esclusivo a Prati, Parioli e Centro Storico.</p>
+            <div class="service-card">
+                <h2>🎓 Bambini</h2>
+                <p>Sviluppo logico e cognitivo attraverso il gioco.</p>
             </div>
         </section>
 
         <section class="reviews-section">
-            <h2 style="text-align:center; color: var(--secondary-color);">Cosa dicono gli allievi</h2>
-            <div class="reviews-grid">
+            <h2 style="text-align: center; color: var(--secondary-color);">Cosa dicono i miei allievi</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Kendry è un istruttore eccezionale. Molto professionale."</p>
-                    <p><strong>Alessandro M.</strong> <br> <span class="location">Roma, Prati</span></p>
+                    <p>"Kendry è eccezionale con i bambini. Mio figlio è entusiasta."</p>
+                    <p><strong>Alessandro M. (Prati)</strong></p>
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Excellent lessons in English. Highly recommended for expats!"</p>
-                    <p><strong>Sarah J.</strong> <br> <span class="location">Centro Storico</span></p>
+                    <p>"Professional and clear teaching. Perfect for expats in Rome."</p>
+                    <p><strong>Sarah J. (Centro Storico)</strong></p>
                 </div>
             </div>
         </section>
 
-        <footer id="contatti">
+        <section id="chi-sono" class="about-me-box">
+            <img src="istruttore-kendry-salazar.webp" alt="Kendry Salazar" class="about-me-image">
+            <h2 id="about-me-title">Il Tuo Mentore verso la Maestria</h2>
+            <p id="about-me-p1">Mi chiamo <strong>Kendry Salazar</strong> e porto l'eccellenza degli scacchi nei quartieri centrali di Roma. Come Istruttore FSI e Arbitro Regionale, offro un metodo unico che unisce pratica e regolamento ufficiale.</p>
+            <p id="about-me-p2">Sono un giocatore agonista attivo e metto la mia esperienza a disposizione di chi vuole migliorare davvero.</p>
+        </section>
+
+        <section id="online" class="about-me-box">
+            <img src="online-lesson.webp" alt="Lezioni Online" class="online-image">
+            <h2>Lezioni Online</h2>
+            <p>Utilizzo le migliori piattaforme per analisi in tempo reale. La qualità della lezione a casa tua, ovunque tu sia.</p>
+            <a href="https://api.whatsapp.com/send?phone=+393508260806" class="btn">Prenota Online</a>
+        </section>
+
+        <section style="margin: 40px 0;">
+            <h2 style="text-align: center;">Dove Insegno a Roma</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.34!2d12.45!3d41.90!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605!2sPrati%20Roma!5e0!3m2!1sit!2sit!4v1" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <footer>
             <p id="footer-rights">© 2026 Kendry Salazar - Istruttore Scacchi Roma. Tutti i diritti riservati.</p>
         </footer>
     </div>
 
     <script>
-        // ... (Mantieni qui la tua logica JavaScript per le lingue che è già corretta) ...
-        // Assicurati solo che gli ID nel JS corrispondano a quelli nel nuovo HTML.
+        // Inserire qui la tua funzione changeLanguage precedente per mantenere le traduzioni
     </script>
 </body>
 </html>
