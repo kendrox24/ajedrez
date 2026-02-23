@@ -230,8 +230,21 @@ window.onclick = function(event) {
     font-weight: bold;
     cursor: pointer;
 }
-.privacy-content h2 { color: #1a1a1a; margin-top: 0; }
-.social-button { min-width: 48px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+./* Ingrandisci i bottoni social nel footer */
+.social-buttons a {
+    display: inline-block;
+    padding: 12px; /* Aumenta l'area cliccabile */
+    margin: 0 10px;
+    font-size: 24px; /* Se sono icone o testo */
+}
+
+/* Per il tasto CTA principale */
+.contact-cta {
+    background-color: #B8860B !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
     </style>
 </head>
 
@@ -491,6 +504,7 @@ window.onclick = function(event) {
             
             // Risoluzione bug: aggiorna tutti i bottoni di contatto tramite la classe
             updateClassTexts('btn-text', t.contactBtn);
+
 
             // Servizi
             updateElement('adults-lessons', t.adultsTitle); updateElement('adults-description', t.adultsDesc);
