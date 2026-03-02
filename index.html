@@ -157,10 +157,10 @@
             <h1 id="title">Lezioni di Scacchi Professionali a Roma e Online</h1>
             <p id="tagline">Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online</p>
             <div class="contact-buttons">
-                <a href="https://api.whatsapp.com/send?phone=393508260806&text=Ciao%20Kendry,%20vorrei%20informazioni%20sulle%20tue%20lezioni" 
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0_T9MHgxjg16MWfiBW6rWIQfRw1lS1E7z_Esl_v-f3RTt6SQZiFNz5Z2YC-o7SrtrCrZHaRRyx" 
                    class="contact-cta" 
                    onclick="gtag('event', 'generate_lead');">
-                   <span id="hero-btn-text">PRENOTA UNA SESSIONE GRATUITA</span>
+                   <span id="hero-btn-text">PRENOTA LEZIONE DI PROVA GRATUITA</span>
                 </a>
             </div>
         </div>
@@ -174,12 +174,6 @@
             <a href="#contatti" id="nav-contact">Contatti</a>
         </nav>
 
-        <div class="contact-buttons">
-            <a href="https://api.whatsapp.com/send?phone=393508260806&text=Ciao%20Kendry,%20vorrei%20scoprire%20il%20mio%20livello" class="contact-cta" onclick="gtag('event', 'generate_lead');">
-                <span id="mid-btn-text">SCRIVIMI SU WHATSAPP</span>
-            </a>
-        </div>
-        
         <p style="text-align: center; margin-top: 30px;">
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0_T9MHgxjg16MWfiBW6rWIQfRw1lS1E7z_Esl_v-f3RTt6SQZiFNz5Z2YC-o7SrtrCrZHaRRyx" target="_blank" id="schedule-button" class="schedule-button">
                 Prenota lezione di prova gratuita
@@ -278,6 +272,7 @@
                 <h2 id="contact-title">Inizia Oggi il Tuo Percorso</h2>
                 <p id="contact-text">Disponibile per lezioni private, masterclass e preparazione tornei.</p>
                 <p>scacchilezioni@gmail.com | +39 350 826 0806</p>
+                <p><a href="https://api.whatsapp.com/send?phone=393508260806" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">Contattami su WhatsApp per informazioni</a></p>
             </section>
         </main>
     </div>
@@ -336,19 +331,17 @@
             document.getElementById('cookie-banner').style.display = 'none';
         }
 
-        // Gestione Modale Privacy (addEventListener invece di onclick)
         const modal = document.getElementById("privacyModal");
         function openPrivacy() { modal.style.display = "block"; }
         document.getElementById("closePrivacyBtn").addEventListener('click', () => { modal.style.display = "none"; });
         window.addEventListener('click', (event) => { if (event.target === modal) modal.style.display = "none"; });
 
-        // Traduzioni con CTA differenziate
         const translations = {
             it: {
                 navCorsi: "I Corsi", navAbout: "Chi Sono", navOnline: "Online", navContact: "Contatti",
                 title: "Lezioni di Scacchi Professionali a Roma e Online",
                 tagline: "Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online",
-                heroBtn: "PRENOTA UNA SESSIONE GRATUITA", midBtn: "SCRIVIMI SU WHATSAPP", onlineBtn: "Ricevi Piano Personalizzato",
+                heroBtn: "PRENOTA LEZIONE DI PROVA GRATUITA", midBtn: "SCRIVIMI SU WHATSAPP", onlineBtn: "Ricevi Piano Personalizzato",
                 scheduleBtn: "Prenota lezione di prova gratuita",
                 adultsTitle: "Preparazione Agonistica", adultsDesc: "Strategia e gestione della gara con l'occhio tecnico di un Arbitro Regionale FSI. Simulazione tornei ufficiali.",
                 kidsTitle: "Sviluppo Cognitivo", kidsDesc: "Metodo pedagogico d'eccellenza per bambini e ragazzi. Potenziamento logica e concentrazione.",
@@ -370,7 +363,7 @@
                 navCorsi: "Courses", navAbout: "About Me", navOnline: "Online", navContact: "Contact",
                 title: "Professional Chess Lessons in Rome and Online",
                 tagline: "FSI Certified Instructor and Regional Arbiter: Excellence at Home and Online",
-                heroBtn: "BOOK A FREE SESSION", midBtn: "WHATSAPP ME", onlineBtn: "Get a Custom Plan",
+                heroBtn: "BOOK FREE TRIAL LESSON", midBtn: "WHATSAPP ME", onlineBtn: "Get a Custom Plan",
                 scheduleBtn: "Book free trial lesson",
                 adultsTitle: "Competitive Preparation", adultsDesc: "Strategy and tournament management with the technical eye of an FSI Regional Arbiter.",
                 kidsTitle: "Cognitive Development", kidsDesc: "Pedagogical method of excellence for children and teens. Enhancing logic and concentration.",
@@ -392,7 +385,7 @@
                 navCorsi: "Cursos", navAbout: "Sobre Mí", navOnline: "Online", navContact: "Contacto",
                 title: "Lecciones de Ajedrez Profesionales en Roma y Online",
                 tagline: "Instructor Certificado FSI y Árbitro Regional: Excelencia a Domicilio y Online",
-                heroBtn: "RESERVA UNA SESIÓN GRATUITA", midBtn: "ESCRÍBEME POR WHATSAPP", onlineBtn: "Recibe tu Plan Personalizado",
+                heroBtn: "RESERVA CLASE DE PRUEBA GRATUITA", midBtn: "ESCRÍBEME POR WHATSAPP", onlineBtn: "Recibe tu Plan Personalizado",
                 scheduleBtn: "Reserva clase de prueba gratuita",
                 adultsTitle: "Preparación Competitiva", adultsDesc: "Estrategia y gestión de torneos con el ojo técnico de un Árbitro Regional FSI.",
                 kidsTitle: "Desarrollo Cognitivo", kidsDesc: "Método pedagógico de excelencia para niños y jóvenes.",
@@ -418,10 +411,7 @@
         }
 
         function changeLanguage(lang) {
-            // Aggiornamento Accessibilità e SEO
             document.documentElement.lang = lang;
-            
-            // Aggiorna aria-pressed sui bottoni
             document.querySelectorAll('.language-button').forEach(btn => {
                 btn.setAttribute('aria-pressed', btn.textContent.toLowerCase() === lang);
             });
@@ -433,9 +423,8 @@
             updateElement('nav-online', t.navOnline); updateElement('nav-contact', t.navContact);
             updateElement('title', t.title); updateElement('tagline', t.tagline);
             
-            // CTA Differenziate per CRO
             updateElement('hero-btn-text', t.heroBtn);
-            updateElement('mid-btn-text', t.midBtn);
+            // mid-btn-text rimosso perché il bottone è stato tolto
             updateElement('btn-online-booking', t.onlineBtn);
             updateElement('schedule-button', t.scheduleBtn);
 
@@ -455,7 +444,6 @@
             updateElement('contact-title', t.contTitle); updateElement('contact-text', t.contText);
         }
 
-        // Init
         document.addEventListener('DOMContentLoaded', () => { changeLanguage('it'); });
     </script>
 </body>
