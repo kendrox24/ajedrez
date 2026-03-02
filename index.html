@@ -205,12 +205,6 @@
             <a href="#contatti" id="nav-contact">Contatti</a>
         </nav>
 
-        <p style="text-align: center; margin-top: 30px;">
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0_T9MHgxjg16MWfiBW6rWIQfRw1lS1E7z_Esl_v-f3RTt6SQZiFNz5Z2YC-o7SrtrCrZHaRRyx" target="_blank" id="schedule-button" class="schedule-button">
-                Prenota lezione di prova gratuita
-            </a>
-        </p>
-
         <img src="maestro-scacchi-kendry-salazar.webp" alt="Lezioni di scacchi per bambini" width="900" height="450" loading="lazy" style="border: 3px solid var(--primary-color);">
 
         <main>
@@ -299,6 +293,12 @@
                 </div>
             </section>
 
+            <p style="text-align: center; margin: 40px 0;">
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0_T9MHgxjg16MWfiBW6rWIQfRw1lS1E7z_Esl_v-f3RTt6SQZiFNz5Z2YC-o7SrtrCrZHaRRyx" target="_blank" id="schedule-button" class="schedule-button">
+                    Prenota lezione di prova gratuita
+                </a>
+            </p>
+
             <section class="contact" id="contatti">
                 <h2 id="contact-title">Inizia Oggi il Tuo Percorso</h2>
                 <p id="contact-text">Disponibile per lezioni private, masterclass e preparazione tornei.</p>
@@ -345,135 +345,3 @@
         <button class="cookie-btn" onclick="acceptCookies()">Accetta</button>
         <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
     </div>
-
-    <script defer>
-        // Gestione GDPR
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'granted');
-            gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-        function rejectCookies() {
-            localStorage.setItem('cookieConsent', 'denied');
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        const modal = document.getElementById("privacyModal");
-        function openPrivacy() { modal.style.display = "block"; }
-        document.getElementById("closePrivacyBtn").addEventListener('click', () => { modal.style.display = "none"; });
-        window.addEventListener('click', (event) => { if (event.target === modal) modal.style.display = "none"; });
-
-        const translations = {
-            it: {
-                navCorsi: "I Corsi", navAbout: "Chi Sono", navOnline: "Online", navContact: "Contatti",
-                title: "Lezioni di Scacchi Professionali a Roma e Online",
-                tagline: "Istruttore Certificato FSI e Arbitro Regionale: Eccellenza a Domicilio e Online",
-                heroBtn: "PRENOTA LEZIONE DI PROVA GRATUITA", midBtn: "SCRIVIMI SU WHATSAPP", onlineBtn: "Ricevi Piano Personalizzato",
-                scheduleBtn: "Prenota lezione di prova gratuita",
-                adultsTitle: "Preparazione Agonistica", adultsDesc: "Strategia e gestione della gara con l'occhio tecnico di un Arbitro Regionale FSI. Simulazione tornei ufficiali.",
-                kidsTitle: "Sviluppo Cognitivo", kidsDesc: "Metodo pedagogico d'eccellenza per bambini e ragazzi. Potenziamento logica e concentrazione.",
-                romeTitle: "A Domicilio e Centro Storico", romeDesc: "Servizio esclusivo a domicilio a Prati, Parioli e nel Centro Storico. Massima flessibilità per famiglie.",
-                onlineTitle: "International Coaching", onlineDesc: "L'unico coaching trilingue nativo a Roma (IT/EN/ES) per espatriati, diplomatici e studenti online.",
-                aboutTitle: "Il Tuo Mentore verso la Maestria Scacchistica",
-                aboutP1: "Mi chiamo <strong>Kendry Salazar</strong> e porto la cultura degli scacchi nei quartieri centrali di Roma. La mia missione è fornire agli allievi gli strumenti per dominare la scacchiera con consapevolezza tecnica.",
-                aboutP2: "In qualità di <strong>Istruttore FSI e Arbitro Regionale</strong>, il mio metodo integra la tattica pura con la padronanza del regolamento ufficiale. Sono un <strong>giocatore agonista attivo in tornei nazionali</strong> e socio del Circolo 4 Torri.",
-                learnTitle: "Perché Scegliere Il Mio Metodo?",
-                whyList: "<li><strong>Autorità Istituzionale:</strong> Unico istruttore a Roma a integrare la competenza arbitrale ufficiale nelle lezioni.</li><li><strong>Profilo Internazionale:</strong> Insegnamento fluente in Inglese, Spagnolo e Italiano per famiglie expat.</li><li><strong>Presidio Territoriale:</strong> Specializzato in lezioni a domicilio a Prati, Parioli e Centro Storico.</li><li><strong>Prima Lezione Gratuita:</strong> Un'opportunità per valutare il livello e definire un piano personalizzato.</li>",
-                cta: "Fai la tua mossa vincente: prenota ora la tua sessione d'eccellenza.",
-                onlSecTitle: "Lezioni Online: Il Tuo Maestro Ovunque Tu Sia",
-                onlSecDesc: "Grazie alla tecnologia, porto l'eccellenza dell'insegnamento FSI direttamente a casa tua. Utilizziamo piattaforme avanzate per analisi in tempo reale.",
-                mapTitle: "Dove Insegno: Prati, Parioli e Centro Storico",
-                mapDesc: "📍 Servizio a domicilio garantito nei quartieri centrali di Roma.",
-                contTitle: "Inizia Oggi il Tuo Percorso", contText: "Disponibile per lezioni private, masterclass e preparazione tornei.",
-            },
-            en: {
-                navCorsi: "Courses", navAbout: "About Me", navOnline: "Online", navContact: "Contact",
-                title: "Professional Chess Lessons in Rome and Online",
-                tagline: "FSI Certified Instructor and Regional Arbiter: Excellence at Home and Online",
-                heroBtn: "BOOK FREE TRIAL LESSON", midBtn: "WHATSAPP ME", onlineBtn: "Get a Custom Plan",
-                scheduleBtn: "Book free trial lesson",
-                adultsTitle: "Competitive Preparation", adultsDesc: "Strategy and tournament management with the technical eye of an FSI Regional Arbiter.",
-                kidsTitle: "Cognitive Development", kidsDesc: "Pedagogical method of excellence for children and teens. Enhancing logic and concentration.",
-                romeTitle: "At Home & Historic Center", romeDesc: "Exclusive in-home service in Prati, Parioli, and the Historic Center.",
-                onlineTitle: "International Coaching", onlineDesc: "The only native trilingual coaching in Rome (IT/EN/ES) for expats, diplomats, and online students.",
-                aboutTitle: "Your Mentor towards Chess Mastery",
-                aboutP1: "My name is <strong>Kendry Salazar</strong>, bringing chess culture to Rome's central districts.",
-                aboutP2: "As an <strong>FSI Instructor and Regional Arbiter</strong>, my method integrates pure tactics with mastery of official regulations.",
-                learnTitle: "Why Choose My Method?",
-                whyList: "<li><strong>Institutional Authority:</strong> Integrating official arbitral competence into lessons.</li><li><strong>International Profile:</strong> Fluent instruction in English, Spanish, and Italian.</li><li><strong>Territorial Presence:</strong> Home lessons in Prati, Parioli, and Historic Center.</li><li><strong>First Lesson Free:</strong> Assess your level and define a study plan.</li>",
-                cta: "Make your winning move: book your session of excellence now.",
-                onlSecTitle: "Online Lessons: Your Master Wherever You Are",
-                onlSecDesc: "I bring FSI teaching excellence directly to your home using advanced platforms for real-time analysis.",
-                mapTitle: "Where I Teach: Prati, Parioli & Historic Center",
-                mapDesc: "📍 Home service guaranteed in the central districts of Rome.",
-                contTitle: "Start Your Journey Today", contText: "Available for private lessons, masterclasses, and tournament preparation.",
-            },
-            es: {
-                navCorsi: "Cursos", navAbout: "Sobre Mí", navOnline: "Online", navContact: "Contacto",
-                title: "Lecciones de Ajedrez Profesionales en Roma y Online",
-                tagline: "Instructor Certificado FSI y Árbitro Regional: Excelencia a Domicilio y Online",
-                heroBtn: "RESERVA CLASE DE PRUEBA GRATUITA", midBtn: "ESCRÍBEME POR WHATSAPP", onlineBtn: "Recibe tu Plan Personalizado",
-                scheduleBtn: "Reserva clase de prueba gratuita",
-                adultsTitle: "Preparación Competitiva", adultsDesc: "Estrategia y gestión de torneos con el ojo técnico de un Árbitro Regional FSI.",
-                kidsTitle: "Desarrollo Cognitivo", kidsDesc: "Método pedagógico de excelencia para niños y jóvenes.",
-                romeTitle: "A Domicilio y Centro Histórico", romeDesc: "Servicio exclusivo a domicilio en Prati, Parioli y el Centro Histórico.",
-                onlineTitle: "International Coaching", onlineDesc: "El único coaching trilingue nativo en Roma (IT/EN/ES) para expatriados.",
-                aboutTitle: "Tu Mentor hacia la Maestría Ajedrecística",
-                aboutP1: "Me llamo <strong>Kendry Salazar</strong> y llevo la cultura del ajedrez a los distritos centrales de Roma.",
-                aboutP2: "Como <strong>Instructor FSI y Árbitro Regional</strong>, mi método integra la táctica pura con el dominio del reglamento oficial.",
-                learnTitle: "¿Por qué elegir mi método?",
-                whyList: "<li><strong>Autoridad Institucional:</strong> Integrando competencia arbitral oficial en las lecciones.</li><li><strong>Perfil Internacional:</strong> Enseñanza fluida en Inglés, Español e Italiano.</li><li><strong>Presencia Territorial:</strong> Lecciones a domicilio en Prati y Parioli.</li><li><strong>Primera Lección Gratuita:</strong> Evalúa tu nivel y plan de estudio.</li>",
-                cta: "Haz tu movimiento ganador: reserva ahora tu sesión de excelencia.",
-                onlSecTitle: "Lecciones Online: Tu Maestro Donde Estés",
-                onlSecDesc: "Llevo la excelencia de la enseñanza FSI directamente a tu casa utilizando plataformas avanzadas.",
-                mapTitle: "Dónde Enseño: Prati, Parioli y Centro Histórico",
-                mapDesc: "📍 Servicio a domicilio garantito en los distritos céntricos de Roma.",
-                contTitle: "Comienza Tu Camino Hoy", contText: "Disponible para lecciones privadas, masterclass y preparación de torneos.",
-            }
-        };
-
-        function updateElement(id, content, isHTML = false) {
-            const el = document.getElementById(id);
-            if (el) { if (isHTML) el.innerHTML = content; else el.textContent = content; }
-        }
-
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-            document.querySelectorAll('.language-button').forEach(btn => {
-                btn.setAttribute('aria-pressed', btn.textContent.toLowerCase() === lang);
-            });
-
-            const t = translations[lang];
-            document.title = "Kendry Salazar - " + t.title;
-
-            updateElement('nav-corsi', t.navCorsi); updateElement('nav-about', t.navAbout);
-            updateElement('nav-online', t.navOnline); updateElement('nav-contact', t.navContact);
-            updateElement('title', t.title); updateElement('tagline', t.tagline);
-            
-            updateElement('hero-btn-text', t.heroBtn);
-            updateElement('btn-online-booking', t.onlineBtn);
-            updateElement('schedule-button', t.scheduleBtn);
-
-            updateElement('adults-lessons', t.adultsTitle); updateElement('adults-description', t.adultsDesc);
-            updateElement('kids-lessons', t.kidsTitle); updateElement('kids-description', t.kidsDesc);
-            updateElement('rome-lessons', t.romeTitle); updateElement('rome-description', t.romeDesc);
-            updateElement('online-lessons', t.onlineTitle); updateElement('online-description', t.onlineDesc);
-
-            updateElement('about-me-title', t.aboutTitle);
-            updateElement('about-me-p1', t.aboutP1, true); updateElement('about-me-p2', t.aboutP2, true);
-            updateElement('what-you-learn-title', t.learnTitle);
-            updateElement('why-choose-me-list', t.whyList, true);
-            updateElement('call-to-action', t.cta);
-            updateElement('online-sec-title', t.onlSecTitle); updateElement('online-sec-desc', t.onlSecDesc);
-            
-            updateElement('map-title', t.mapTitle); updateElement('map-desc', t.mapDesc);
-            updateElement('contact-title', t.contTitle); updateElement('contact-text', t.contText);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => { changeLanguage('it'); });
-    </script>
-</body>
-</html>
