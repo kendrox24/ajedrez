@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lezioni di scacchi professionali a Roma Centro, Prati, Parioli, Appio Latino e Tuscolana. Istruttore certificato FSI e Arbitro Regionale per bambini e adultos. Servizio trilingue.">
+    
+    <title>Kendry Salazar - Lezioni di Scacchi a Roma e Online</title>
+    <link rel="canonical" href="https://www.scacchilezioni.com/">
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      if(localStorage.getItem('cookieConsent') === 'granted') {
+          gtag('consent', 'default', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+      } else {
+          gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYMFW9JC6Y"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-GYMFW9JC6Y');
+      gtag('config', 'AW-995212560');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        :root {
+            --primary-color: #B8860B; 
+            --hover-darken: #8B6508; 
+            --secondary-color: #2E3A59; 
+            --background-color: #F4F6F9; 
+            --text-color: #333333; 
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; }
+        h1, h2, h3, h4 { color: var(--primary-color); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+
+        /* HEADER & NAV */
+        .logo { position: fixed; top: 110px; left: 20px; font-size: 1.5em; font-weight: 800; color: #fff !important; background-color: var(--secondary-color); padding: 8px 15px; border-radius: 50px; text-decoration: none; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 2px solid var(--primary-color); display: flex; align-items: center; gap: 8px; }
+        .language-buttons { position: fixed; top: 110px; right: 20px; z-index: 1000; display: flex; gap: 8px; }
+        .language-button { background-color: #fff; color: var(--secondary-color); border: 1px solid #ddd; min-width: 44px; min-height: 44px; border-radius: 50%; cursor: pointer; font-weight: 700; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; }
+        .language-button:hover { background-color: var(--primary-color); color: #fff; }
+
+        .promo-banner { background: linear-gradient(90deg, #F4C542, #E5B020); color: #2E3A59; text-align: center; padding: 12px 20px; font-weight: bold; position: sticky; top: 0; z-index: 2000; }
+        .promo-btn { display: inline-block; margin-left: 10px; background-color: #2E3A59; color: #F4C542; padding: 6px 12px; text-decoration: none; border-radius: 5px; font-size: 0.85em; font-weight: 800; transition: 0.3s; }
+
+        .hero-section { position: relative; width: 100%; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 33, 71, 0.7), rgba(0, 33, 71, 0.4)); z-index: -1; }
+        .hero-section h1 { color: #fff; font-size: 3.2rem; font-weight: 800; text-shadow: 2px 4px 10px rgba(0,0,0,0.5); }
+        .badge-students { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 15px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
+
+        .contact-cta, .schedule-button { display: inline-flex; align-items: center; justify-content: center; padding: 18px 35px; background: var(--primary-color) !important; color: #fff !important; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 18px; transition: 0.3s; cursor: pointer; border: none; }
+
+        /* SECTIONS */
+        .nav-menu { display: flex; justify-content: center; gap: 15px; margin: -40px auto 40px; flex-wrap: wrap; position: relative; z-index: 10; }
+        .nav-menu a { background-color: #fff; color: var(--secondary-color); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .service { background-color: #fff; padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        .about-me-content { background-color: var(--secondary-color); color: #FFFFFF; padding: 50px; border-radius: 20px; overflow: hidden; margin-bottom: 50px; }
+        .about-me-image { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); float: right; margin-left: 30px; }
+
+        .reviews-section { padding: 60px 20px; background: #fff; border-radius: 20px; margin-bottom: 50px; text-align: center; }
+        .review-card { background: #f9f9f9; padding: 30px; border-radius: 15px; max-width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        /* WHATSAPP */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 25px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10000; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .wa-chat-window { position: fixed; bottom: 100px; right: 25px; width: 320px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: none; z-index: 10001; overflow: hidden; }
+
+        /* FOOTER CORRECTED (Estilo Captura) */
+        footer { padding: 40px 20px; background-color: #F4F6F9; text-align: left; border-top: 1px solid #ddd; }
+        .social-buttons { display: flex; justify-content: flex-start; gap: 15px; margin-bottom: 10px; }
+        .social-button { color: #0000FF; text-decoration: none; font-size: 1.5rem; }
+        .footer-text { font-size: 0.9rem; color: #444; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .about-me-image { float: none; margin: 0 auto 20px; display: block; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="promo-banner" class="promo-banner">
+        🚀 <span>ACCADEMIA JUNIOR ONLINE (6-14 anni): Inizio 3 Aprile!</span>
+        <span style="background: #fff; color: #d00; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-left: 5px;">ULTIMI 3 POSTI</span>
+        <a href="https://wa.me/393508260806" class="promo-btn" id="promo-btn-text">PRENOTA ORA</a>
+    </div>
+
+    <div id="waWindow" class="wa-chat-window">
+        <div style="background: #075E54; color: white; padding: 15px; display: flex; align-items: center; gap: 12px;">
+            <img src="istruttore-kendry-salazar.webp" alt="Kendry" style="width: 40px; height: 40px; border-radius: 50%;">
+            <div><strong>Kendry Salazar</strong><br><small>Online</small></div>
+        </div>
+        <div style="padding: 20px; background: #e5ddd5; min-height: 100px;">
+            <div style="background: white; padding: 10px; border-radius: 10px; font-size: 14px;">Ciao! 👋 Come posso aiutarti?</div>
+        </div>
+        <div style="padding: 10px; display: flex; background: #f0f0f0;">
+            <input type="text" id="waInput" style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ddd;" placeholder="Scrivi...">
+            <button onclick="sendToWhatsapp()" style="background: #075E54; color: white; border: none; border-radius: 50%; width: 40px; margin-left: 5px; cursor: pointer;">➤</button>
+        </div>
+    </div>
+    <div class="whatsapp-float" onclick="toggleWaChat()">
+        <svg width="30" height="30" fill="white" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    </div>
+
+    <div class="language-buttons">
+        <button class="language-button" onclick="changeLanguage('es')">ES</button>
+        <button class="language-button" onclick="changeLanguage('en')">EN</button>
+        <button class="language-button" onclick="changeLanguage('it')">IT</button>
+    </div>
+
+    <a href="#" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19,22H5V20H19V22M17,10C15.58,10 14.26,10.77 13.55,12H13V7H16V5H13V2H11V5H8V7H11V12H10.45C9.74,10.77 8.42,10 7,10A3,3 0 0 0 4,13C4,14.24 4.77,15.31 5.86,15.76L5,19H19L18.14,15.76C19.23,15.31 20,14.24 20,13A3,3 0 0 0 17,10Z"/></svg>
+        KENDRY SALAZAR
+    </a>
+
+    <header class="hero-section">
+        <img src="lezioni-scacchi-roma-prati.webp" alt="Scacchi Roma" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="badge-students">⭐ +100 Studenti formati a Roma</div>
+            <h1 id="title">Potenzia la tua Mente con gli Scacchi</h1>
+            <p id="tagline">Migliora concentrazione, logica e strategia con un método professionale a Roma e Online.</p>
+            <a href="https://calendar.google.com" class="contact-cta" id="hero-btn-text">PROVA UNA LEZIONE GRATUITA</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav-menu">
+            <a href="#corsi" id="nav-corsi">I Corsi</a>
+            <a href="#chi-sono" id="nav-about">Chi Sono</a>
+            <a href="#online" id="nav-online">Lezioni Online</a>
+            <a href="#contatti" id="nav-contact">Contatti</a>
+        </nav>
+
+        <section class="services" id="corsi">
+            <div class="service"><h2>Preparazione Agonistica</h2><p>Affina la tecnica e domina la gestione della gara.</p></div>
+            <div class="service"><h2>Sviluppo Cognitivo</h2><p>Metodo pedagogico per logica e pazienza nei bambini.</p></div>
+            <div class="service"><h2>Roma Centro e Quartieri</h2><p>Prati, Parioli, Appio Latino e Tuscolana.</p></div>
+        </section>
+
+        <section class="reviews-section">
+            <h2 style="color: var(--secondary-color);">Cosa dicono i miei allievi</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <div class="review-card"><p>"Insegnante paziente e molto preparato. Mio figlio adora le sue lezioni!"</p><strong>- Marco G.</strong></div>
+                <div class="review-card"><p>"Ottimo metodo per adulti che vogliono riprendere o migliorare."</p><strong>- Elena P.</strong></div>
+            </div>
+        </section>
+
+        <section class="about-me" id="chi-sono">
+            <div class="about-me-content">
+                <img src="istruttore-kendry-salazar.webp" alt="Kendry Salazar" class="about-me-image">
+                <h2 id="about-me-title">Il Tuo Mentore de Scacchi</h2>
+                <p>Mi chiamo <strong>Kendry Salazar</strong>. In qualità di <strong>Istruttore FSI e Arbitro Regionale</strong>, offro una visione a 360° sulla scacchiera.</p>
+                <p>El mio approccio unisce años de competizione agonistica con la precisione delle regole ufficiali.</p>
+            </div>
+        </section>
+
+        <section id="online" style="margin-bottom: 50px;">
+            <div style="background: #fff; padding: 40px; border-radius: 20px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2>Lezioni Online Interactive</h2>
+                    <p>Uso le migliori piattaforme per garantirti un'esperienza fluida e professionale ovunque tu sia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align:center; margin-bottom: 60px;">
+            <h2>Dove trovarmi a Roma</h2>
+            <div style="border-radius: 20px; overflow: hidden; height: 350px;">
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section id="contatti" style="background: var(--secondary-color); color: #fff; padding: 50px; border-radius: 20px; text-align: center;">
+            <h2 style="color: #F4C542;">Inizia oggi la tua mossa</h2>
+            <p>📧 scacchilezioni@gmail.com | 📞 +39 350 826 0806</p>
+            <a href="https://wa.me/393508260806" class="schedule-button" style="margin-top: 20px;">CONTATTAMI ORA</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="social-buttons">
+            <a href="tel:+393508260806" class="social-button">📞</a>
+            <a href="https://instagram.com/scacchilezioni" class="social-button">📸</a>
+            <a href="https://facebook.com/..." class="social-button">👤</a>
+            <a href="https://youtube.com/..." class="social-button">📺</a>
+        </div>
+        <div class="footer-text">
+            © 2026 Kendry Salazar - Istruttore Scacchi Roma.<br>
+            Tutti i diritti riservati. | <span style="text-decoration:underline; cursor:pointer;">Privacy Policy</span>
+        </div>
+    </footer>
+
+    <script defer>
+        function toggleWaChat() { const win = document.getElementById('waWindow'); win.style.display = (win.style.display === 'block') ? 'none' : 'block'; }
+        function sendToWhatsapp() {
+            const input = document.getElementById('waInput').value;
+            if (input.trim() !== "") { window.open(`https://wa.me/393508260806?text=${encodeURIComponent(input)}`, '_blank'); }
+        }
+
+        const translations = {
+            it: {
+                navCorsi: "I Corsi", navAbout: "Chi Sono", navOnline: "Online", navContact: "Contatti",
+                title: "Potenzia la tua Mente con gli Scacchi", tagline: "Migliora concentrazione, logica e strategia con un método professionale a Roma e Online.",
+                heroBtn: "PROVA UNA LEZIONE GRATUITA", aboutTitle: "Il Tuo Mentore de Scacchi"
+            },
+            en: {
+                navCorsi: "Courses", navAbout: "About Me", navOnline: "Online", navContact: "Contact",
+                title: "Empower Your Mind Through Chess", tagline: "Improve concentration, logic, and strategy with professional coaching in Rome and Online.",
+                heroBtn: "BOOK A FREE TRIAL", aboutTitle: "Your Chess Mentor"
+            },
+            es: {
+                navCorsi: "Cursos", navAbout: "Sobre Mí", navOnline: "Online", navContact: "Contacto",
+                title: "Potencia tu Mente con el Ajedrez", tagline: "Mejora tu concentración, lógica y estrategia con un método profesional en Roma y Online.",
+                heroBtn: "RESERVA CLASE GRATIS", aboutTitle: "Tu Mentor de Ajedrez"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            if(!t) return;
+            document.getElementById('nav-corsi').textContent = t.navCorsi;
+            document.getElementById('nav-about').textContent = t.navAbout;
+            document.getElementById('nav-online').textContent = t.navOnline;
+            document.getElementById('nav-contact').textContent = t.navContact;
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('tagline').textContent = t.tagline;
+            document.getElementById('hero-btn-text').textContent = t.heroBtn;
+            document.getElementById('about-me-title').textContent = t.aboutTitle;
+        }
+        document.addEventListener('DOMContentLoaded', () => { changeLanguage('it'); });
+    </script>
+</body>
+</html>

@@ -42,6 +42,7 @@
             --secondary-color: #2E3A59; 
             --background-color: #F4F6F9; 
             --text-color: #333333; 
+            --accent-gold: #D4AF37; /* Añadido para el borde de la foto */
         }
 
         body { font-family: 'Inter', sans-serif; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; }
@@ -59,6 +60,9 @@
         .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; margin: 0; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 33, 71, 0.6); z-index: -1; }
         .hero-section h1 { color: #D4AF37; font-size: 2.8rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); margin-bottom: 15px; }
+
+        /* Estilo para el Badge añadido */
+        .badge-students { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 15px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600; }
 
         .contact-cta, .schedule-button { 
             display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; 
@@ -84,7 +88,7 @@
         .service-icon { font-size: 3em; margin-bottom: 20px; color: var(--primary-color); }
         .about-me-content { text-align: left; padding: 40px; overflow: hidden; margin-bottom: 40px; }
         img { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
-        .about-me-image { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); float: right; margin-left: 20px; }
+        .about-me-image { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-gold); float: right; margin-left: 20px; }
         
         .reviews-section { padding: 60px 20px; background-color: #eef2f5; border-radius: 10px; margin-bottom: 40px; }
         .reviews-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -138,6 +142,7 @@
         <img src="lezioni-scacchi-roma-prati.webp" alt="Scacchi Roma" class="hero-bg" fetchpriority="high">
         <div class="hero-overlay"></div>
         <div class="container">
+            <div class="badge-students">⭐ +100 Studenti formati in tutta Italia</div>
             <h1 id="title">Lezioni di Scacchi a Roma e Online</h1>
             <p id="tagline">Impara con metodo e passione: Roma Centro, Appio Latino e Tuscolana.</p>
             <div class="contact-buttons">
@@ -207,13 +212,13 @@
             <section class="about-me" id="chi-sono">
                 <div class="about-me-content">
                     <img src="istruttore-kendry-salazar.webp" alt="Kendry Salazar" class="about-me-image" width="200" height="200" loading="lazy">
-                    <h2 id="about-me-title">Il Tuo Mentore verso la Maestria Scacchistica</h2>
-                    <p id="about-me-p1">Mi chiamo <strong>Kendry Salazar</strong> e porto la cultura degli scacchi nei quartieri di Roma: Centro, Appio Latino, Tuscolana e Prati. La mia missione è rendere la bellezza degli scacchi accessibile a tutti.</p>
-                    <p id="about-me-p2">In qualità di <strong>Istruttore FSI e Arbitro Regionale</strong>, il mio metodo integra la tattica pura con la padronanza del regolamento ufficiale. Sono un <strong>giocatore agonista attivo in tornei nazionali</strong>.</p>
+                    <h2 id="about-me-title" style="color: var(--accent-gold);">Il Tuo Mentore de Scacchi</h2>
+                    <p id="about-me-p1">Mi chiamo <strong>Kendry Salazar</strong>. In qualità di <strong>Istruttore FSI e Arbitro Regionale</strong>, offro una visione a 360° sulla scacchiera.</p>
+                    <p id="about-me-p2">El mio approccio unisce años de competizione agonistica con la precisione delle regole ufficiali.</p>
                     
                     <h3 id="what-you-learn-title">Perché Scegliere il Mio Metodo?</h3>
                     <ul id="why-choose-me-list">
-                        <li><strong>Autorità Istituzionale:</strong> Unico istruttore a Roma a integrare la competenza arbitrale ufficiale nelle lezioni.</li>
+                        <li><strong>Autorità Istituzionale:</strong> Istruttore e Arbitro Ufficiale con una profonda conoscenza delle dinamiche di gioco.</li>
                         <li><strong>Profilo Internazionale:</strong> Insegnamento fluente in IT/EN/ES per famiglie expat e diplomatici.</li>
                         <li><strong>Presidio Territoriale:</strong> Specializzato in lezioni a Roma Centro, Appio Latino, Tuscolana e Prati.</li>
                         <li><strong>Prima Lezione Gratuita:</strong> Un'opportunità per valutare il livello e definire un piano personalizzato.</li>
@@ -294,7 +299,7 @@
                 promoBanner: "🎉 SPECIALE INAUGURAZIONE: Nasce l'Accademia Scacchi Junior Online (6-14 anni)!", promoBtn: "Prenota il Posto su WhatsApp",
                 romeTitle: "Roma Centro, Appio e Tuscolana", mapTitle: "Dove Insegno: Centro, Appio e Tuscolana",
                 contTitle: "Iniziamo a giocare?", contText: "Disponibile per lezioni private e piccoli gruppi. Scrivimi!",
-                aboutTitle: "Passione e Metodo sulla Scacchiera"
+                aboutTitle: "Il Tuo Mentore de Scacchi"
             },
             en: {
                 navCorsi: "Courses", navAbout: "About Me", navOnline: "Online", navContact: "Contact",
@@ -304,7 +309,7 @@
                 promoBanner: "🎉 GRAND OPENING: Online Junior Chess Academy (ages 6-14)!", promoBtn: "Book on WhatsApp",
                 romeTitle: "City Center & Appio Latino", mapTitle: "Where I Teach: City Center & Appio",
                 contTitle: "Let's start playing?", contText: "Available for private lessons and small groups. Message me!",
-                aboutTitle: "Passion and Method on the Board"
+                aboutTitle: "Your Chess Mentor"
             },
             es: {
                 navCorsi: "Cursos", navAbout: "Sobre Mí", navOnline: "Online", navContact: "Contacto",
@@ -314,7 +319,7 @@
                 promoBanner: "🎉 GRAN APERTURA: ¡Academia de Ajedrez Junior Online (6-14 años)!", promoBtn: "Reservar en WhatsApp",
                 romeTitle: "Roma Centro y Appio Latino", mapTitle: "Dónde Enseño: Centro y Appio Latino",
                 contTitle: "¿Empezamos a jugar?", contText: "Disponible para clases particulares y grupos pequeños. ¡Escríbeme!",
-                aboutTitle: "Pasión y Método en el Tablero"
+                aboutTitle: "Tu Mentor de Ajedrez"
             }
         };
 
