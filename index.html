@@ -42,7 +42,7 @@
             --secondary-color: #2E3A59; 
             --background-color: #F4F6F9; 
             --text-color: #333333; 
-            --accent-gold: #D4AF37; /* Añadido para el borde de la foto */
+            --accent-gold: #D4AF37;
         }
 
         body { font-family: 'Inter', sans-serif; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; }
@@ -61,7 +61,6 @@
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 33, 71, 0.6); z-index: -1; }
         .hero-section h1 { color: #D4AF37; font-size: 2.8rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); margin-bottom: 15px; }
 
-        /* Estilo para el Badge añadido */
         .badge-students { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 15px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600; }
 
         .contact-cta, .schedule-button { 
@@ -110,7 +109,10 @@
 <body>
     <div id="promo-banner" class="promo-banner">
         🎉 SPECIALE INAUGURAZIONE: Nasce l'Accademia Scacchi Junior Online (6-14 anni)! <br>
-        <span style="font-weight: normal; font-size: 0.9em;">1 Mese GRATIS. Inizio Venerdì 3 Aprile alle 17:00. Solo 10 posti disponibili!</span>
+        <span style="font-weight: normal; font-size: 0.9em;">
+            1 Mese GRATIS. Inizio Venerdì 3 Aprile alle 17:00.
+            <span style="background: #fff; color: #d00; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-left: 5px;">SOLO 3 POSTI RIMASTI</span>
+        </span>
         <a href="https://wa.me/393508260806?text=Ciao%20Kendry,%20vorrei%20iscrivere%20mio%20figlio/a%20all'Accademia%20Junior" class="promo-btn" id="promo-btn-text">Prenota il Posto su WhatsApp</a>
     </div>
 
