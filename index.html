@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-   <style>
+  <style>
         html { scroll-behavior: smooth; }
         :root {
             --primary-color: #B8860B; 
@@ -49,41 +49,42 @@
         h1, h2, h3, h4 { color: var(--primary-color); }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
 
-        /* --- NUEVO CÓDIGO CSS PARA EL LOGO CON IMAGEN --- */
+        /* --- LOGO CON IMMAGINE (Stile Targa Premium) --- */
         .logo { 
             position: fixed; 
-            top: 110px; 
+            top: 105px; 
             left: 20px; 
             z-index: 1000; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-decoration: none;
-            border: 2px solid var(--primary-color); 
-            background-color: var(--secondary-color); 
-            border-radius: 50%; 
-            width: 70px;  
-            height: 70px; 
-            overflow: hidden; 
+            
+            /* Sfondo bianco e bordo dorato per far risaltare l'immagine */
+            background-color: #ffffff; 
+            border: 2px solid var(--accent-gold); 
+            border-radius: 8px; 
+            
+            height: 60px; 
+            padding: 5px 15px; 
         }
 
         .logo-img {
-            width: 100%; 
-            height: 100%;
-            object-fit: cover; 
-            mix-blend-mode: multiply;
+            height: 100%; 
+            width: auto; 
+            object-fit: contain; 
         }
 
         @media (max-width: 768px) {
             .logo { 
-                top: 70px; 
+                top: 65px; 
                 left: 10px; 
-                width: 60px; 
-                height: 60px; 
+                height: 50px; 
+                padding: 4px 10px;
             }
         }
-        /* --- FIN DEL CÓDIGO CSS DEL LOGO --- */
+        /* --- FINE LOGO --- */
 
         .language-buttons { position: fixed; top: 110px; right: 20px; z-index: 1000; display: flex; gap: 10px; }
         .language-button { background-color: var(--primary-color); color: #ffffff; border: none; min-width: 48px; min-height: 48px; border-radius: 5px; cursor: pointer; font-weight: 800; font-size: 16px; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
@@ -139,7 +140,6 @@
         .privacy-content { background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 8px; width: 90%; max-width: 700px; color: #333; position: relative; }
         .close-privacy { position: absolute; top: 10px; right: 20px; font-size: 28px; cursor: pointer; color: var(--primary-color); }
     </style>
-</head>
 
 <body>
     <div id="promo-banner" class="promo-banner">
